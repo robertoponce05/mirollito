@@ -1,0 +1,142 @@
+html,
+body {
+    height: 100%;
+}
+
+.logo_sushi {
+    width: 50px;
+    height: auto;
+}
+
+.img_carrusel {
+    width: 100%;
+    height: 600px;
+    background-size: cover;
+}
+
+.home_menu {
+    margin-bottom: 15px;
+}
+
+.mapa {
+    min-height: 400px;
+}
+
+.contenedor_carrusel {
+    margin-bottom: 12px;
+}
+
+#wrapper {
+    min-height: 100%;
+    position: relative;
+}
+
+#contenido {
+    padding-bottom: 100px;
+}
+
+#shoppingItem,
+#username {
+    color: #FFF;
+}
+
+.footer {
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.icono_redes {
+    display: grid;
+}
+
+.centrar {
+    justify-content: center;
+    display: flex;
+    text-align: center;
+}
+
+.row_espacio {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 720px) {
+    .img_carrusel {
+        width: 100%;
+        height: 300px;
+        background-size: cover;
+    }
+    .row_espacio {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 380px) {
+    .img_carrusel {
+        width: 100%;
+        height: 200px;
+        background-size: cover;
+    }
+}
+
+@media (min-width: 768px) {
+    .mapa {
+        height: 600px;
+    }
+    .contacto {
+        display: flex;
+        justify-content: end;
+    }
+    .reservados,
+    .centrar {
+        justify-content: left;
+    }
+}
+
+.iniciar_sesion {
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+    margin-bottom: 15%;
+}
+
+.enviar_sesion {
+    margin-top: 15px;
+}
+
+.img_item {
+    width: auto;
+    height: 130px;
+    background-size: cover;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+}
+
+.contenedor_tabla {
+    max-width: 800px;
+}
+
+.card_direccion {
+    margin: 5px;
+}
+
+.portada_img {
+    object-fit: cover;
+    height: 560px;
+    width: 100%;
+    padding: 0;
+}
+
+.nopadding {
+    padding: 0;
+}
+
+.nolist {
+    list-style: none;
+}
