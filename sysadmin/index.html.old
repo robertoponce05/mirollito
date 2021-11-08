@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Administración - Mi Rollito</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
+    </script>
+</head>
+
+<body>
+    <div class="navegar">
+        <ul class="nav justify-content-center" style="background-color: #681212; padding: 10px;">
+            <img src="../img/logo.png" class="img-fluit logo_sushi" alt="Logo">
+            <li class="nav-item nav_color_text">Mi Rollito - Admin</li>
+        </ul>
+    </div>
+    <div class="container-fluid">
+        <div class="row fullHeight bg_contenido">
+            <div class="position-relative">
+                <div class="position-absolute top-0 start-50 translate-middle-x">
+                    <h3 class="salto">Bienvenido al sysadmin de Rollito</h3>
+                    <p class="salto text-center">Introduce tu usuario para acceder</p>
+                    <div class="container position-relative">
+                        <div class="position-absolute top-0 start-50 translate-middle-x">
+                            <form action="sysadmin.html">
+                                <div class="form-floating mb-3">
+                                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                                    <label for="floatingInput">Email address</label>
+                                </div>
+                                <div class="form-floating salto">
+                                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                                    <label for="floatingPassword">Password</label>
+                                </div>
+                                <div class="col salto">
+                                    <button type="submit" class="btn btn-success">Login</button>
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    </div>
+</body>
+
+</html>
