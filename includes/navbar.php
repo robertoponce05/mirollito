@@ -8,29 +8,47 @@
         <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <?php
-                if($page==1){ 
-
-                
-                echo '<li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="index.php">Inicio</a>
-                </li>';
+                if ($page == 1) {
+                    echo '<li class="nav-item"><a class="nav-link active" aria-current="page" href="index.php">Inicio</a></li>';
+                } else {
+                    echo '<li class="nav-item"><a class="nav-link" aria-current="page" href="index.php">Inicio</a></li>';
                 }
-                echo '
-                <li class="nav-item">
-                    <a class="nav-link" href="menu.php">Menú</a>
-                </li>
+                ?>
+                <?php
+                if ($page == 2) {
+                    echo '
+                    <li class="nav-item">
+                        <a class="nav-link active" href="menu.php">Menú</a>
+                    </li>';
+                } else {
+                    echo '
+                    <li class="nav-item">
+                        <a class="nav-link" href="menu.php">Menú</a>
+                    </li>';
+                }
+                ?>
                 <li class="nav-item">
                     <a class="nav-link" href="index.php#ubi">Ubicación</a>
                 </li>
+                <?php
+                if ($page == 3) {
+                    echo '
+                <li class="nav-item">
+                    <a class="nav-link active" href="nosotros.php">Nosotros</a>
+                </li>';
+                } else {
+                    echo '
                 <li class="nav-item">
                     <a class="nav-link" href="nosotros.php">Nosotros</a>
                 </li>';
-                ?>
+                } ?>
+
             </ul>
+
             <?php
-            if ($ini==2){
+            if ($ini == 2) {
                 echo '<span class="navbar-text"><a role="button" class="btn btn-outline-secondary" href="login.php">Iniciar sesión</a></span>';
-            }else if ($ini==3){
+            } else if ($ini == 3) {
                 include('navbar_ini.php');
             }
             ?>

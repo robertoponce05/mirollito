@@ -1,8 +1,8 @@
-<?php include('includes/db.php') ?>
+<?php include('includes/db.php'); $page=1;?>
 <?php include("includes/header.php") ?>
 <?php 
     $ini=2;
-    $page=1;
+    
 ?>
 <?php include("includes/navbar.php") ?>
 <div class="container-sm" id="contenido">

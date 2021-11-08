@@ -1,8 +1,8 @@
-<?php include('includes/db.php') ?>
+<?php include('includes/db.php'); $page = 3; ?>
 <?php include("includes/header.php") ?>
 <?php
 $ini = 0;
-$page = 4;
+
 ?>
 <?php include("includes/navbar.php") ?>
 <?php if (isset($_SESSION['message'])) { ?>
@@ -46,3 +46,8 @@ $page = 4;
 
 
 </div>
+
+
+<?php
+include("includes/footer.php")
+?>

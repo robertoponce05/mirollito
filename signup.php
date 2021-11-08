@@ -1,4 +1,4 @@
-<?php include('includes/db.php') ?>
+<?php include('includes/db.php'); $page=5;?>
 <?php include("includes/header.php") ?>
 <?php
 $ini = 2;
@@ -12,7 +12,7 @@ $ini = 2;
 
 <?php session_unset();
 } ?>
-<div class="container row_espacio">
+<div class="container row_espacio" style="height: 90%;">
 
     <form action="includes/registrar.php" method="POST">
 

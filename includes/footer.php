@@ -1,13 +1,13 @@
-<div style="position: fixed; background-color: #EEEEEE; bottom: 0; width: 100%;">
+<div style=" background-color: #EEEEEE; bottom: 0; width: 100%;">
     <div class="row">
 
-        <div class="col-12 text-center" style="padding-top: 15px;">
-            Mi rollito sushi
+        <div class="col-12 text-center" style="padding-top: 25px;">
+            Mi rollito: sushi
         </div>
-        <div class="col-6">
-
-            <a class="email btn" href="robertoponce55@aragon.unam.mx">robertoponce55@aragon.unam.mx</a>
+        <div class="col-12 text-center" style="margin-top: 25px; margin-bottom: 25px";>
+            Todos los derechos reservados 2021            
         </div>
+        
 
     </div>
 </div>
