@@ -18,6 +18,8 @@
         echo ': Inicia sesión';
         else if($page == 5)
         echo ': Registro';
+        else if($page == 6)
+        echo ': Cuenta';
         
         
 

@@ -10,6 +10,11 @@
         
 
     </div>
+    <?php 
+        if (isset($nombre)){
+        $_SESSION['nombre']=$nombre;
+        };
+    ?>
 </div>
 
 <!--SCRIPTS-->

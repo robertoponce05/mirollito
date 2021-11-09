@@ -1,9 +1,9 @@
-<?php include('includes/db.php') ?>
+<?php include('includes/db.php'); $page = 6;?>
 <?php include("includes/header.php") ?>
 <?php $ini = 3;
-$page = 0;
+
 include("includes/navbar.php");
-echo $ini; ?>
+?>
 
 <body>
     <div id="wrapper">
@@ -27,7 +27,7 @@ echo $ini; ?>
                         <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Pedidos</button>
                         <button class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">Direcciones</button>
 
-                        <a class="btn btn-outline-primary d-grid " href="index.html" role="button">Cerrar sesión</a>
+                        <a class="btn btn-outline-primary d-grid " href="login.php" role="button">Cerrar sesión</a>
 
 
 
@@ -115,9 +115,9 @@ echo $ini; ?>
                                             <h5 class="card-title">5478********7811</h5>
                                             <div class="card-text">
                                                 <div class="col">
-                                                <p >Vencimiento: 05/23</p>
-                                                
-                                                    <p >Roberto Ponce</p>
+                                                    <p>Vencimiento: 05/23</p>
+
+                                                    <p>Roberto Ponce</p>
                                                 </div>
                                             </div>
                                             <a href="#" class="btn btn-primary">Editar</a>

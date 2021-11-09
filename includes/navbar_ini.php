@@ -13,7 +13,12 @@
         <img class="border border-dark rounded-circle" style="width: 45px; margin: 5px;" src="img/user.png" alt="User">
     </a>
     <a class="nav-link dropdown-toggle" href="#" id="username" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-        UsersName
+        <?php 
+        if (isset($_SESSION['nombre'])){
+            $nombre=$_SESSION['nombre'];
+            echo $nombre;
+        }else{
+        echo $nombre;}?>
     </a>
     <ul class="dropdown-menu" aria-labelledby="Dropdown">
         <li><a class="dropdown-item" href="cuenta.php">Mi cuenta</a></li>

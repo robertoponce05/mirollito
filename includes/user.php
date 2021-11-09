@@ -14,12 +14,16 @@ if (isset($_POST['user'])) {
 
     
     $result = mysqli_query($conn, $query);
+    $result2 =  mysqli_fetch_array($result);
     $filas = mysqli_num_rows($result);
+    
     if ($filas > 0) {
         $_SESSION['message'] = 'Sesión iniciada con éxito';
         $_SESSION['message_type'] = 'success';
         echo 'sesión iniciada';
+        $_SESSION['nombre']= $result2['nombre'];
         header("location:../menu.php");
+
     } else {
         $_SESSION['message'] = 'Datos incorrectos';
         $_SESSION['message_type'] = 'danger';
