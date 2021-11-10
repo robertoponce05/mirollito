@@ -1,6 +1,6 @@
 <?php include('includes/db.php'); $page = 6;?>
 <?php include("includes/header.php") ?>
-<?php $ini = 3;
+<?php 
 
 include("includes/navbar.php");
 ?>
@@ -23,7 +23,7 @@ include("includes/navbar.php");
                         </div>
                         <button class="nav-link" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="false">Perfil</button>
                         <button class="nav-link" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#tarjetas" type="button" role="tab" aria-controls="v-pills-home" aria-selected="false">Formas de pago</button>
-                        <button class="nav-link show active" id="carrito-tab" data-bs-toggle="pill" data-bs-target="#carrito" type="button" role="tab" aria-controls="carrito" aria-selected="true">Carrito</button>
+                        <!--<button class="nav-link show active" id="carrito-tab" data-bs-toggle="pill" data-bs-target="#carrito" type="button" role="tab" aria-controls="carrito" aria-selected="true">Carrito</button>-->
                         <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Pedidos</button>
                         <button class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">Direcciones</button>
 
@@ -134,68 +134,7 @@ include("includes/navbar.php");
 
 
 
-                        <div class="tab-pane fade show active" id="carrito" role="tabpanel" aria-labelledby="carrito-tab">
-                            <h3 class="titulo_cuenta">Elementos en el carrito: 3</h3>
-
-                            <div class=" row">
-                                <table class="table table-borderless table-responsive align-items-center">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">Cantidad</th>
-                                            <th scope="col">Producto</th>
-                                            <th scope="col">Costo</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td class="d-flex"><input class="form-control" type="number" name="" id="" value="2" style="width: 100px;"><img src="img/delete.png" alt="eliminar elemento" width="32px" style="margin-left: 6px;"></td>
-                                            <td>
-                                                <p>Sushi normal</p>
-                                            </td>
-
-                                            <td>$190</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="d-flex"><input class="form-control" type="number" name="" id="" value="2" style="width: 100px;"><img src="img/delete.png" alt="eliminar elemento" width="32px" style="margin-left: 6px;"></td>
-                                            <td>
-                                                <p>Refresco</p>
-                                            </td>
-
-                                            <td>$40</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="d-flex"><input class="form-control" type="number" name="" id="" value="1" style="width: 100px;"><img src="img/delete.png" alt="eliminar elemento" width="32px" style="margin-left: 6px;"></td>
-                                            <td>
-                                                <p>Sushi salmón</p>
-                                            </td>
-
-                                            <td>$55</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="d-flex"><input class="form-control" type="number" name="" id="" value="2" style="width: 100px;"><img src="img/delete.png" alt="eliminar elemento" width="32px" style="margin-left: 6px;"></td>
-                                            <td>
-                                                <p>Sushi picante</p>
-                                            </td>
-
-                                            <td>$250</td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <h5>Total</h5>
-                                            </td>
-                                            <td></td>
-                                            <td>$480</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-
-                                <button type="button" class="btn btn-outline-success justify-content-end" data-bs-toggle="modal" data-bs-target="#exampleModal">Continuar</button>
-
-                            </div>
-
-
-
-                        </div>
+                        
                         <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
 
 

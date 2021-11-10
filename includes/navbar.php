@@ -46,11 +46,16 @@
             </ul>
 
             <?php
-            if ($ini == 2) {
-                echo '<span class="navbar-text"><a role="button" class="btn btn-outline-secondary" href="login.php">Iniciar sesión</a></span>';
-            } else if ($ini == 3) {
+            if (isset($_SESSION['nombre'])) {
+                $nombre = $_SESSION['nombre'];
                 include('navbar_ini.php');
+            } else {
+                echo '<span class="navbar-text"><a role="button" class="btn btn-outline-secondary" href="login.php">Iniciar sesión</a></span>';
             }
+
+
+
+
             ?>
         </div>
     </div>
