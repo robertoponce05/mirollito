@@ -27,6 +27,7 @@ $lista=$_SESSION['list'];
             <?php $query = "SELECT * FROM productos";
                 $result_clientes = mysqli_query($conn, $query);
                 while ($row = mysqli_fetch_array($result_clientes)) {
+                    if((array_key_exists((int)$row['id_item'], $lista))){
                     ?>
                 <tr>
                     <td class="d-flex"><input class="form-control" type="number" name="" id="" value="<?php  echo $lista[(int)$row['id_item']];?>" style="width: 100px;"><img src="img/delete.png" alt="eliminar elemento" width="32px" style="margin-left: 6px;"></td>
@@ -36,7 +37,7 @@ $lista=$_SESSION['list'];
 
                     <td> <p> $<?php echo $row['precio']?></p></td>
                 </tr>
-               <?php }?>
+               <?php }}?>
             </tbody>
         </table>
 
