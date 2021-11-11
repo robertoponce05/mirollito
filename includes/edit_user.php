@@ -9,3 +9,4 @@ if (isset($_POST['registra'])) {
     $pass = $_POST['pass'];
     $repass = $_POST['repass'];
     $celu = $_POST['numero'];
+}
