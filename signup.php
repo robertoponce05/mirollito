@@ -43,18 +43,18 @@ $ini = 2;
                     <div class="mb-3 col-md-6">
 
                         <h5 class="subtitulo_cuenta">Número celular:</h5>
-                        <input type="tel" name="numero" class="form-control" placeholder="15 12345678" required size="10" minlenght="10">
+                        <input type="text" name="numero" class="form-control" placeholder="15 12345678" required maxlength="10" pattern="[1-9]{1}[0-9]{9}">
 
                     </div>
                 </div>
                 <div class="row  row_espacio">
                     <div class="mb-3 col-md-6">
                         <h5 class="subtitulo_cuenta">Contraseña:</h5>
-                        <input type="password" name="pass" class="form-control" placeholder="6 a 16 caracteres" required minlength="8" size="16">
+                        <input type="password" name="pass" class="form-control" placeholder="8 a 16 caracteres" required minlength="8" maxlength="16" pattern=".{8,}">
                     </div>
                     <div class="mb-3 col-md-6">
                         <h5 class="subtitulo_cuenta">Confirmar contraseña:</h5>
-                        <input type="password" name="repass" class="form-control" placeholder="Reingresa tu contraseña" required minlength="8" size="16">
+                        <input type="password" name="repass" class="form-control" placeholder="Reingresa tu contraseña" required minlength="8" maxlength="16" pattern=".{8,}">
                     </div>
                 </div>
                 <input type="submit" class="btn enviar_sesion btn-outline-success" name="registra" value="Registrarse">

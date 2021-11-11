@@ -45,6 +45,14 @@ body {
     padding-bottom: 100px;
 }
 
+
+/*.contenedor_cuenta {
+    background-color: #f8f9fa;
+    margin: 40px;
+    max-width: 100%;
+    align-items: center;
+}*/
+
 #shoppingItem,
 #username {
     color: #FFF;

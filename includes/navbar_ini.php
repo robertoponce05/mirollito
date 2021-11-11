@@ -19,7 +19,7 @@
                 <path d="M6 5l14 1l-1 7h-13" />
             </svg> <?php echo $car; ?>
         </a>
-        <a class="nav-item align-items-start" href="cuenta.php">
+        <a class="nav-item align-items-start" href="cuenta.php?pill=0">
             <img class="border border-dark rounded-circle" style="width: 45px; margin: 5px;" src="img/user.png" alt="User">
         </a>
         <a class="nav-link dropdown-toggle" href="#" id="username" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -31,9 +31,9 @@
     } ?>
         </a>
         <ul class="dropdown-menu" aria-labelledby="Dropdown">
-            <li><a class="dropdown-item" href="cuenta.php">Mi cuenta</a></li>
-            <li><a class="dropdown-item" href="#">Mis direcciones</a></li>
-            <li><a class="dropdown-item" href="#">Pedidos</a></li>
+            <li><a class="dropdown-item" href="cuenta.php?pill=0">Mi cuenta</a></li>
+            <li><a class="dropdown-item" href="cuenta.php?pill=1">Mis direcciones</a></li>
+            <li><a class="dropdown-item" href="cuenta.php?pill=2">Pedidos</a></li>
 
             <li>
                 <hr class="dropdown-divider">

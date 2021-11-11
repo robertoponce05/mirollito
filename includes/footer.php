@@ -13,6 +13,7 @@
     <?php 
         if (isset($nombre)){
         $_SESSION['nombre']=$nombre;
+        $_SESSION['idusuario']=$iduser;
         }
         if (isset($_SESSION['car'])){
             $_SESSION['car']=$car;

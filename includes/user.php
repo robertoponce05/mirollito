@@ -22,6 +22,7 @@ if (isset($_POST['user'])) {
         $_SESSION['message_type'] = 'success';
         echo 'sesión iniciada';
         $_SESSION['nombre']= $result2['nombre'];
+        $_SESSION['idusuario']=$result2['idusuario'];
         header("location:../menu.php");
 
     } else {

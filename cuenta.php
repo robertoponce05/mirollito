@@ -1,6 +1,16 @@
-<?php include('includes/db.php'); $page = 6;?>
-<?php include("includes/header.php") ?>
-<?php 
+<?php include('includes/db.php');
+$page = 6; ?>
+<?php include("includes/header.php");
+if($nombre == null || $nombre = ''){
+    $_SESSION['message'] = 'Primero debes iniciar sesión';
+    $_SESSION['message_type'] = 'warning';
+    
+    header('location:../');
+    die();
+    
+}
+?>
+<?php
 
 include("includes/navbar.php");
 ?>
@@ -11,35 +21,48 @@ include("includes/navbar.php");
 
 
 
-        <div class="container-fluid">
+        <div class="container-fluid" style="height: max-content;">
 
-            <div class="row">
+            <div class="row contenedor_cuenta" >
 
-                <div class="d-flex align-items-start ">
-                    <div class="nav flex-column nav-pills me-3 col-md-2 align-items-center border-2 border-end" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                        <div class="row_espacio">
+
+                <div class="d-flex align-items-center ">
+                    <div class="nav flex-column nav-pills me-3 col-md-2 align-items-center border-2 border-end" id="v-pills-tab" role="tablist" aria-orientation="vertical" >
+                        <div class="row_espacio" >
+                        <?php 
+                                
+                                $query = "SELECT * FROM clientes WHERE idusuario='$iduser'";
+                                $result=mysqli_query($conn, $query);
+                                $result1=mysqli_fetch_array($result);
+                                ?>
                             <img class="border border-dark rounded-circle " style="width: 80px; margin: 5px; align-self: center;" src="img/user.png" alt="User">
-                            <p style="font-size: 11px; font-style: italic;">correo@dominio.mx</p>
+                            <p style="font-size: 11px; font-style: italic;"><?php echo $result1['correo']?></p>
                         </div>
-                        <button class="nav-link" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="false">Perfil</button>
-                        <button class="nav-link" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#tarjetas" type="button" role="tab" aria-controls="v-pills-home" aria-selected="false">Formas de pago</button>
-                        <!--<button class="nav-link show active" id="carrito-tab" data-bs-toggle="pill" data-bs-target="#carrito" type="button" role="tab" aria-controls="carrito" aria-selected="true">Carrito</button>-->
-                        <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Pedidos</button>
-                        <button class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">Direcciones</button>
+                        <button class="nav-link <?php if (isset($_GET['pill']) and $_GET['pill'] == '0') {
+                                                    echo 'show active';
+                                                } ?>" id="v-pills-perfil-tab" data-bs-toggle="pill" data-bs-target="#v-pills-perfil" type="button" role="tab" aria-controls="v-pills-perfil" aria-selected="true">Perfil</button>
+                        <button class="nav-link " id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#tarjetas" type="button" role="tab" aria-controls="v-pills-home" aria-selected="false">Formas de pago</button>
+                        <!--<button class="nav-link" id="carrito-tab" data-bs-toggle="pill" data-bs-target="#carrito" type="button" role="tab" aria-controls="carrito" aria-selected="true">Carrito</button>-->
+                        <button class="nav-link <?php if (isset($_GET['pill']) and $_GET['pill'] == '2') {
+                                                    echo 'show active';
+                                                } ?>" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Pedidos</button>
+                        <button class="nav-link <?php if (isset($_GET['pill']) and $_GET['pill'] == '1') {
+                                                    echo 'show active';
+                                                } ?>" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">Direcciones</button>
 
-                        <a class="btn btn-outline-primary d-grid " href="login.php" role="button">Cerrar sesión</a>
-
-
-
-
+                        <a class="btn btn-outline-secondary d-grid " href="includes/logout.php" role="button">Cerrar sesión</a>
                     </div>
 
+
                     <div class="tab-content container-fluid" id="v-pills-tabContent">
-                        <div class="tab-pane fade" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                        <div class="tab-pane fade <?php if (isset($_GET['pill']) and $_GET['pill'] == '0') {
+                                                        echo 'show active'; unset($_GET['pill']);
+                                                    } ?>" id="v-pills-perfil" role="tabpanel" aria-labelledby="v-pills-perfil-tab">
 
 
                             <div class="container-sm">
                                 <h3 class="titulo_cuenta row_espacio">Editar perfil</h3>
+                                
 
                                 <div class="container-sm row_espacio">
                                     <form action="">
@@ -47,27 +70,27 @@ include("includes/navbar.php");
                                             <div class="row">
                                                 <div class="mb-3 col-md-4">
                                                     <h5 class="subtitulo_cuenta">Nombre(s):</h5>
-                                                    <input type="text" id="disabledTextInput" class="form-control" placeholder="Roberto" disabled>
+                                                    <input type="text" id="disabledTextInput" class="form-control" placeholder="<?php echo $result1['nombre']?>" disabled>
                                                 </div>
                                                 <div class="mb-3 col-md-4">
                                                     <h5 class="subtitulo_cuenta">Primer apellido</h5>
-                                                    <input type="text" id="disabledTextInput" class="form-control" placeholder="Ponce" disabled>
+                                                    <input type="text" id="disabledTextInput" class="form-control" placeholder="<?php echo $result1['p_apellido']?>" disabled>
                                                 </div>
                                                 <div class="mb-3 col-md-4">
                                                     <h5 class="subtitulo_cuenta">Segundo apellido</h5>
-                                                    <input type="text" id="disabledTextInput" class="form-control" placeholder="Cano" disabled>
+                                                    <input type="text" id="disabledTextInput" class="form-control" placeholder="<?php echo $result1['s_apellido']?>" disabled>
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="mb-3 col-md-6">
                                                     <h5 class="subtitulo_cuenta">Correo electrónico:</h5>
 
-                                                    <input type="email" id="disabledTextInput" class="form-control" placeholder="roberto@dominio.mx" disabled>
+                                                    <input type="email" id="disabledTextInput" class="form-control" placeholder="<?php echo $result1['correo']?>" disabled>
                                                 </div>
                                                 <div class="mb-3 col-md-6">
 
                                                     <h5 class="subtitulo_cuenta">Número celular:</h5>
-                                                    <input type="text" id="disabledTextInput" class="form-control" placeholder="+525530825580" disabled>
+                                                    <input type="text" id="disabledTextInput" class="form-control" placeholder="+52<?php echo ' '.$result1['telefono']?>" disabled>
 
                                                 </div>
                                             </div>
@@ -134,8 +157,10 @@ include("includes/navbar.php");
 
 
 
-                        
-                        <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+
+                        <div class="tab-pane fade <?php if (isset($_GET['pill']) and $_GET['pill'] == '2') {
+                                                        echo 'show active'; unset($_GET['pill']);
+                                                    } ?>" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
 
 
 
@@ -276,7 +301,9 @@ include("includes/navbar.php");
 
 
                         </div>
-                        <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+                        <div class="tab-pane fade <?php if (isset($_GET['pill']) and $_GET['pill'] == '1') {
+                                                        echo 'show active'; unset($_GET['pill']);
+                                                    } ?>" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
 
                             <div class="container-sm">
                                 <div class="row">
@@ -329,7 +356,7 @@ include("includes/navbar.php");
                             </div>
 
                         </div>
-
+<?php ?>
 
 
                     </div>

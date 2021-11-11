@@ -3,6 +3,7 @@
 <?php
 if (isset($_SESSION['nombre'])) {
     $nombre = $_SESSION['nombre'];
+    $iduser=$_SESSION['idusuario'];
 }
 if (isset($_SESSION['car'])) {
     (int)$car = $_SESSION['car'];
@@ -29,6 +30,8 @@ if (isset($_SESSION['car'])) {
                             echo ': Registro';
                         else if ($page == 6)
                             echo ': Cuenta';
+                        else if ($page == 7)
+                            echo ': Carrito';
 
 
 

@@ -20,7 +20,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
 
-    <?php session_unset();
+    <?php unset($_SESSION['message']); unset($_SESSION['message_type']);
     } ?>
 
     <div class="navegar">

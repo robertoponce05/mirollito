@@ -3,7 +3,16 @@
 <?php 
     $ini=2;
     
+    
 ?>
+<?php if (isset($_SESSION['message'])) { ?>
+        <div class="alert alert-<?= $_SESSION['message_type'] ?> alert-dismissible fade show " style="margin-bottom:0" role="alert">
+            <?= $_SESSION['message']; ?>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+
+    <?php unset($_SESSION['message']); unset($_SESSION['message_type']);
+    } ?>
 <?php include("includes/navbar.php") ?>
 <div class="container-sm" id="contenido">
     <div class="contenedor_carrusel">

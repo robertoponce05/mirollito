@@ -62,7 +62,7 @@ $page = 2; ?>
                                 <h5 class="card-title"><?php echo $row['titulo'] ?></h5>
                                 <img class="img-fluid img_item" src="img/item.jpg" alt="item">
                                 <p class="card-text"><?php echo $row['detalle'] ?></p><?php $id_item = $row['id_item']; ?>
-                                <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#modalProduct<?php echo $row['id_item'] ?>">
+                                <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#modalProduct<?php echo $row['id_item'] ?>">
                                     Ver más
                                 </button>
                             </div>
@@ -113,9 +113,9 @@ $page = 2; ?>
                                             </div>
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cerrar</button>
                                             <input type="hidden" name="id" value="<?php echo $row['id_item']; ?>">
-                                            <input type="submit" class="btn btn-primary" value="Agregar a carrito">
+                                            <input type="submit" class="btn btn-success" value="Agregar a carrito">
                                         </div>
                                     </form>
                                 </div>
