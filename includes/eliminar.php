@@ -26,8 +26,8 @@ if (isset($_SESSION['car']) and (int)$_SESSION['car'] <= 0) {
             $_SESSION['list']=$list;
             (int)$_SESSION['car']=$car;
             echo 'entra';
-            $_SESSION['message'] = 'Producto eliminado';
-            $_SESSION['message_type'] = 'success';
+            $_SESSION['messag'] = 'Producto eliminado';
+            $_SESSION['message_typ'] = 'success';
             }header("location:../carrito.php");
         } else {
             echo 'Lista vacía';

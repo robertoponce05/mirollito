@@ -66,42 +66,42 @@ include("includes/navbar.php");
 
                                 <div class="container-sm row_espacio">
                                     <form action="">
-                                        <fieldset disabled="disabled">
+                                        <fieldset >
                                             <div class="row">
                                                 <div class="mb-3 col-md-4">
                                                     <h5 class="subtitulo_cuenta">Nombre(s):</h5>
-                                                    <input type="text" id="disabledTextInput" class="form-control" placeholder="<?php echo $result1['nombre']?>" disabled>
+                                                    <input type="text" id="" class="form-control" placeholder="<?php echo $result1['nombre']?>" >
                                                 </div>
                                                 <div class="mb-3 col-md-4">
                                                     <h5 class="subtitulo_cuenta">Primer apellido</h5>
-                                                    <input type="text" id="disabledTextInput" class="form-control" placeholder="<?php echo $result1['p_apellido']?>" disabled>
+                                                    <input type="text" id="disabledTextInput" class="form-control" placeholder="<?php echo $result1['p_apellido']?>" >
                                                 </div>
                                                 <div class="mb-3 col-md-4">
                                                     <h5 class="subtitulo_cuenta">Segundo apellido</h5>
-                                                    <input type="text" id="disabledTextInput" class="form-control" placeholder="<?php echo $result1['s_apellido']?>" disabled>
+                                                    <input type="text" id="disabledTextInput" class="form-control" placeholder="<?php echo $result1['s_apellido']?>" >
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="mb-3 col-md-6">
                                                     <h5 class="subtitulo_cuenta">Correo electrónico:</h5>
 
-                                                    <input type="email" id="disabledTextInput" class="form-control" placeholder="<?php echo $result1['correo']?>" disabled>
+                                                    <input type="email" id="disabledTextInput" class="form-control" placeholder="<?php echo $result1['correo']?>" >
                                                 </div>
                                                 <div class="mb-3 col-md-6">
 
                                                     <h5 class="subtitulo_cuenta">Número celular:</h5>
-                                                    <input type="text" id="disabledTextInput" class="form-control" placeholder="+52<?php echo ' '.$result1['telefono']?>" disabled>
+                                                    <input type="text" id="disabledTextInput" class="form-control" placeholder="+52<?php echo ' '.$result1['telefono']?>" >
 
                                                 </div>
                                             </div>
                                             <div class="row  row_espacio">
                                                 <div class="mb-3 col-md-6">
                                                     <h5 class="subtitulo_cuenta">Contraseña:</h5>
-                                                    <input type="password" id="disabledTextInput" class="form-control" placeholder="*********" disabled>
+                                                    <input type="password" id="disabledTextInput" class="form-control" placeholder="*********" >
                                                 </div>
                                                 <div class="mb-3 col-md-6">
                                                     <h5 class="subtitulo_cuenta">Confirmar contraseña:</h5>
-                                                    <input type="password" id="disabledTextInput" class="form-control" placeholder="" disabled>
+                                                    <input type="password" id="disabledTextInput" class="form-control" placeholder="">
                                                 </div>
                                             </div>
 

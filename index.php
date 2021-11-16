@@ -1,18 +1,20 @@
-<?php include('includes/db.php'); $page=1;?>
+<?php include('includes/db.php');
+$page = 1; ?>
 <?php include("includes/header.php") ?>
-<?php 
-    $ini=2;
-    
-    
+<?php
+$ini = 2;
+
+
 ?>
 <?php if (isset($_SESSION['message'])) { ?>
-        <div class="alert alert-<?= $_SESSION['message_type'] ?> alert-dismissible fade show " style="margin-bottom:0" role="alert">
-            <?= $_SESSION['message']; ?>
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
+    <div class="alert alert-<?= $_SESSION['message_type'] ?> alert-dismissible fade show " style="margin-bottom:0" role="alert">
+        <?= $_SESSION['message']; ?>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
 
-    <?php unset($_SESSION['message']); unset($_SESSION['message_type']);
-    } ?>
+<?php unset($_SESSION['message']);
+    unset($_SESSION['message_type']);
+} ?>
 <?php include("includes/navbar.php") ?>
 <div class="container-sm" id="contenido">
     <div class="contenedor_carrusel">
@@ -39,23 +41,24 @@
         </div>
     </div>
 
-    <div class="home_menu">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia rerum fuga aut voluptates quaerat nisi. Sit aspernatur soluta voluptatem accusamus, inventore totam architecto eum omnis, neque itaque tempore nihil ab?</p>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt illum sed quam obcaecati. Doloremque delectus rerum quae dolorem nihil, voluptatibus distinctio. Veritatis quae excepturi dolorem numquam necessitatibus vel soluta praesentium.</p>
+    <div class="home_menu padre">
+        <div class="contenedor_nosotros">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia rerum fuga aut voluptates quaerat nisi. Sit aspernatur soluta voluptatem accusamus, inventore totam architecto eum omnis, neque itaque tempore nihil ab?</p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt illum sed quam obcaecati. Doloremque delectus rerum quae dolorem nihil, voluptatibus distinctio. Veritatis quae excepturi dolorem numquam necessitatibus vel soluta praesentium.</p>
 
-        <h3 id="ubi">Ubicación</h3>
+            <h3 id="ubi">Ubicación</h3>
 
-        <div class="container">
-            <div class="row">
-                <div class="col align-self-center">
-                    <iframe class="container-fluid mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d17873.160873551453!2d-99.17938798394763!3d19.654246964108392!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1f59d8066df0d%3A0xcfae06acc9e6f99c!2sCuautitl%C3%A1n!5e0!3m2!1ses-419!2smx!4v1624336971304!5m2!1ses-419!2smx" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <div class="container">
+                <div class="row">
+                    <div class="col align-self-center">
+                        <iframe class="container-fluid mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d17873.160873551453!2d-99.17938798394763!3d19.654246964108392!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1f59d8066df0d%3A0xcfae06acc9e6f99c!2sCuautitl%C3%A1n!5e0!3m2!1ses-419!2smx!4v1624336971304!5m2!1ses-419!2smx" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
                 </div>
+
             </div>
 
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur maxime voluptatibus, numquam beatae, alias recusandae tempora nesciunt commodi rem totam soluta? Laudantium molestias, cum totam saepe repudiandae autem libero quasi.</p>
         </div>
-
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur maxime voluptatibus, numquam beatae, alias recusandae tempora nesciunt commodi rem totam soluta? Laudantium molestias, cum totam saepe repudiandae autem libero quasi.</p>
-
     </div>
 </div>
 

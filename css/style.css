@@ -81,6 +81,17 @@ body {
     margin-bottom: 20px;
 }
 
+.padre {
+    display: flex;
+    justify-content: center;
+}
+
+.contenedor_nosotros {
+    background-color: #FFF;
+    max-width: 800px;
+    padding: 30px;
+}
+
 @media (max-width: 720px) {
     .img_carrusel {
         width: 100%;
@@ -98,11 +109,22 @@ body {
         height: 200px;
         background-size: cover;
     }
+    .menu_padre {
+        display: flex;
+        justify-content: center;
+    }
+    .menu_hijo {
+        max-width: 800px;
+        padding: 30px;
+    }
 }
 
 @media (min-width: 768px) {
     .mapa {
         height: 600px;
+    }
+    .menu {
+        min-height: 90%;
     }
     .contacto {
         display: flex;
