@@ -1,3 +1,8 @@
+</div>
+</div>
+
+</div>
+
 <!--modales-->
 
 <div class="modal fade" id="edicionItem" tabindex="-1" aria-labelledby="Editar" aria-hidden="true">
@@ -140,12 +145,11 @@
                                         </div>
                                         <div class="col-6"><br>
                                             <label for="exampleDataList" class="form-label">Categoría</label>
-                                                <input type="text" name="categoria" class="form-control" list="Cat" placeholder="Selecciona una categoría">
+                                                <input type="text" name="categoria" class="form-control" list="Cat" placeholder="Selecciona una categoría" required>
                                                 <datalist id="Cat">
                                                     <option value="Sushi">
                                                     <option value="Bebidas">
                                                     <option value="Postres">
-                                                    <option value="Paquetes">
                                                     
                                                 </datalist>
                                         </div>
@@ -191,7 +195,7 @@
         </div>
     </div>
 </div>
-
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
 </script>

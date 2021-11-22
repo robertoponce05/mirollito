@@ -4,7 +4,16 @@ body {
     overflow: hidden;
     margin: 0;
 }
-
+.contenedor_cuadro{
+    background-color: #FFF;
+    min-height: 300px;
+    padding: 30px;
+    margin-top: 30px;
+}
+.nomargin{
+    margin: 0;
+    padding: 0;
+}
 .nav_color_text {
     color: #D3D3D3;
     margin: 5px;
@@ -29,11 +38,13 @@ body {
 
 .bg_contenido {
     background-color: #D3D3D3;
+    /*width: 100vh;*/
 }
 
 .contenido {
     padding: 30px;
     height: 95%;
+    margin-bottom: 15px;
 }
 
 .salto {

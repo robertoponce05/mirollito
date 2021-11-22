@@ -1,4 +1,4 @@
-<?php $in=2; include("includes/header.php");  ?>
+<?php include("includes/db.php");$in=2; include("includes/header.php");  ?>
             <div class="col-8 col-md-10 lateral bg_contenido position-relative overflow-auto" style="scrollbar-width: none;">
                 <div class="container salto ">
 

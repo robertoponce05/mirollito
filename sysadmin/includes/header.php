@@ -1,5 +1,5 @@
 <?php 
-    session_start();
+    
     
     $varsession = $_SESSION['user'];
 
@@ -32,7 +32,9 @@
             echo 'SysAdmin: Pedidos';
         }else if($in==3){
             echo 'SysAdmin: Clientes';
-        }else echo 'SysAdmin'
+        }else if($in==4){
+            echo 'SysAdmin: Empleados';
+        }echo 'SysAdmin'
     ?></title>
 
 </head>
@@ -45,8 +47,9 @@
             <li class="nav-item nav_color_text">Mi Rollito - Admin</li>
         </ul>
     </div>
-    <div class="container-fluid">
-        <div class="row">
+    <div class="container-fluid nomargin">
+    <div class="container-fluid nomargin">
+        <div class="row nomargin ">
             <div class="nav flex-column col-4 col-md-2 fullHeight">
                 
                 <a class="nav-link active position-relative nav_color_text" aria-current="page" href="/sysadmin/sysadmin.php">Home
@@ -76,6 +79,14 @@
                 <a class="nav-link nav_color_text position-relative" href="/sysadmin/clientes.php">Clientes
                 <?php 
                     if($in==3){
+                        echo '<img class="position-absolute top-0 start-100" src="img/selector.png" alt=""></a>';
+                    }else{
+                        echo '</a>';
+                    }
+                ?>
+                <a class="nav-link nav_color_text position-relative" href="/sysadmin/empleados.php">Empleados
+                <?php 
+                    if($in==4){
                         echo '<img class="position-absolute top-0 start-100" src="img/selector.png" alt=""></a>';
                     }else{
                         echo '</a>';

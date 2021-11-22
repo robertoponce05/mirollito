@@ -1,7 +1,7 @@
 <?php error_reporting(0);
 include("includes/db.php");
 $in = 3;
-$page=0;
+$page = 0;
 include("includes/header.php");  ?>
 <div class="col-8 col-md-10 fullHeight bg_contenido position-relative">
     <div class="container">
@@ -27,7 +27,7 @@ include("includes/header.php");  ?>
                             <th><?php echo $row['idusuario'] ?></t>
                             <td><?php echo $row['nombre'] ?></td>
                             <td><?php echo $row['p_apellido'] ?>
-                            <?php echo $row['s_apellido'] ?></td>
+                                <?php echo $row['s_apellido'] ?></td>
                             <td><?php echo $row['correo'] ?></td>
                             <td><?php echo $row['telefono'] ?></td>
                             <td>
@@ -78,7 +78,7 @@ include("includes/header.php");  ?>
                                     <td>rcponce@outlook.com</td>
                                     <td>+52 5530825580</td>
                                     <td>
-                                        
+
                                         <button type="button" class="btn btn-success">Habilitar edición</button>
                                     </td>
                                 </tr>

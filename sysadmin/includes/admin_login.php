@@ -5,7 +5,7 @@ if (isset($_POST['loginsys'])) {
     
     $user = $_POST['user'];
     $pass = $_POST['pass'];
-    $_SESSION['user'] = $user;
+    
 
     $query = "SELECT * FROM sysadmin WHERE usuario='$user' and pass='$pass' and activo=1";
 
@@ -15,6 +15,7 @@ if (isset($_POST['loginsys'])) {
         $_SESSION['message'] = 'Sesión iniciada con éxito';
         $_SESSION['message_type'] = 'success';
         echo 'sesión iniciada';
+        $_SESSION['user'] = $user;
         header("location:../sysadmin.php");
     } else {
         $_SESSION['message'] = 'Datos incorrectos';
