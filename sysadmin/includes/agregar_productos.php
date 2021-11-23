@@ -21,8 +21,12 @@
 
     if($result){
         echo 'Se insertaron los datos';
+        $_SESSION['message'] = 'Se agregó "'.$titulo.'" correctamente.';
+        $_SESSION['message_type'] = 'success';
     }else{
         echo 'no se inserto';
+        $_SESSION['message'] = 'No se pudo agregar. Intenta más tarde.';
+        $_SESSION['message_type'] = 'warning';
     } 
     header('Location:../productos.php');
 ?>
