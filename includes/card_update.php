@@ -1,18 +1,29 @@
 <?php
 include("db.php");
+$id_tarjeta = $_POST['tarjeta'];
+$id = $_SESSION['idusuario'];
 if (isset($_SESSION['idusuario'])) {
-    echo '';
-
-
-    if (isset($_POST['aceptar']) && isset($_POST['card']) && isset($_POST['nombre']) && isset($_POST['vencimiento']) && isset($_POST['cvv'])) {
-        echo 'tarjeta recibida';
+    echo 'Sesión';
+    if (isset($_POST['card'])&&$_POST['card']!='') {
         $ccard = $_POST['card'];
+        echo $ccard;
+    } else {
+        $querytar = "SELECT * FROM tarjetas WHERE id_client= '$id' AND id_card='$id_tarjeta'";
+        $resulta = mysqli_query($conn, $querytar);
+        $rowed = mysqli_fetch_array($resulta);
+        $ccard = $rowed['ccard'];
+        echo $querytar.'/n';
+        echo $ccard;
+    }
+
+    if (isset($_POST['aceptar']) && isset($_POST['nombre']) && isset($_POST['vencimiento']) && isset($_POST['cvv'])) {
+        echo 'tarjeta recibida';
+
         $nombre = $_POST['nombre'];
         $fecha = $_POST['vencimiento'];
         $cvv = $_POST['cvv'];
         $alias = $_POST['alias'];
-        $id = $_SESSION['idusuario'];
-        $id_tarjeta = $_POST['tarjeta'];
+        
 
         if (isset($_POST['predeterminada'])) { /* Predeterminar tarjeta */
             $prede = 1;
@@ -51,14 +62,15 @@ if (isset($_SESSION['idusuario'])) {
             $prede = 0;
         }
 
-        $datem = $fecha . '-00';/*formatear a date*/
+        $datem = $fecha . '-00';/*formatear a date YYYY-mm-dd*/
 
-        $query = "INSERT INTO tarjetas(id_client,ccard,alias,nombre,vencimiento,cvv,principal) VALUES ('$id', '$ccard', '$alias', '$nombre', '$datem', '$cvv', '$prede')";
+        $query = "UPDATE tarjetas SET ccard='$ccard',alias='$alias',nombre='$nombre',
+        vencimiento='$datem',cvv='$cvv',principal='$prede' WHERE id_card='$id_tarjeta'";
         echo $query;
         $result = $conn->query($query);
         if ($result) {
-            echo 'Se insertaron los datos';
-            $_SESSION['message'] = 'Se agregó la tarjeta "' . $alias . '" correctamente.';
+            echo 'Se actualizó la tarjeta';
+            $_SESSION['message'] = 'Se actualizó la tarjeta "' . $alias . '" correctamente.';
             $_SESSION['message_type'] = 'success';
         } else {
             echo 'no se inserto';
@@ -70,4 +82,4 @@ if (isset($_SESSION['idusuario'])) {
     }
     /*echo $_SESSION['idusuario'];*/
 }
-header('Location:../cuenta.php?pill=3');
+/*header('Location:../cuenta.php?pill=3');*/
