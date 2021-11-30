@@ -82,4 +82,4 @@ if (isset($_SESSION['idusuario'])) {
     }
     /*echo $_SESSION['idusuario'];*/
 }
-/*header('Location:../cuenta.php?pill=3');*/
+header('Location:../cuenta.php?pill=3');

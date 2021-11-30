@@ -50,7 +50,10 @@
                             $ccardi = $ccardi . substr($ccard, 12, 15);
                             ?>
                             <div class="card-body">
-                                <h5 class="card-title"><?php echo $ccardi; ?></h5>
+                                <div class="d-flex">
+                                    <h5 class="card-title"><?php echo $ccardi; ?></h5>
+                                    <a href="/includes/delete_card.php?i=<?php echo $row['id_card']; ?>"><img class="d-flex justify-content-end" src="/img/delete.png" alt="Eliminar tarjeta" width="30px"></a>
+                                </div>
                                 <div class="card-text">
                                     <div class="col">
                                         <p>Vencimiento: <?php echo $row['vencimiento'] ?></p>
@@ -169,7 +172,10 @@
                             $ccardi = $ccardi . substr($ccard, 12, 15);
                             ?>
                             <div class="card-body">
-                                <h5 class="card-title"><?php echo $ccardi; ?></h5>
+                                <div class="d-flex">
+                                    <h5 class="card-title"><?php echo $ccardi; ?></h5>
+                                    <a href="/includes/delete_card.php?i=<?php echo $row2['id_card']; ?>"><img class="d-flex justify-content-end" src="/img/delete.png" alt="Eliminar tarjeta" width="30px"></a>
+                                </div>
                                 <div class="card-text">
                                     <div class="col">
                                         <p>Vencimiento: <?php echo $row2['vencimiento'] ?></p>
