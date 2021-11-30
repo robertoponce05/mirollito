@@ -47,7 +47,7 @@ if (isset($_SESSION['list'])) {
                     </thead>
                     <tbody>
                         <?php /* Listado del carrito*/
-                        $total=0;
+                        $total = 0;
                         $query = "SELECT * FROM productos";
                         $result_clientes = mysqli_query($conn, $query);
                         while ($row = mysqli_fetch_array($result_clientes)) {
@@ -58,9 +58,10 @@ if (isset($_SESSION['list'])) {
                                     <td>
                                         <p><?php echo $row['titulo'] ?></p>
                                     </td>
-                                <input type="hidden" name="id" value="<?php echo $row['id_item'];?>">
+                                    <input type="hidden" name="id" value="<?php echo $row['id_item']; ?>">
                                     <td>
-                                        <p> $<?php echo $row['precio']; $total= $total+(int)$row['precio']*$lista[(int)$row['id_item']]; ?></p>
+                                        <p> $<?php echo $row['precio'];
+                                                $total = $total + (int)$row['precio'] * $lista[(int)$row['id_item']]; ?></p>
                                     </td>
                                 </tr>
                         <?php }
@@ -69,17 +70,132 @@ if (isset($_SESSION['list'])) {
                         ?>
                         <tr>
                             <td></td>
-                            <td><h5>Total</h5> </td>
-                            <td><h5>$<?php echo $total; $_SESSION['total']=$total;?></h5></td><!--Se guarda el total en variable de sesión-->
+                            <td>
+                                <h5>Total</h5>
+                            </td>
+                            <td>
+                                <h5>$<?php echo $total;
+                                        $_SESSION['total'] = $total; ?></h5>
+                            </td>
+                            <!--Se guarda el total en variable de sesión-->
                         </tr>
                     </tbody>
                 </table>
-                        
+
                 <button type="button" class="btn btn-outline-success justify-content-end" data-bs-toggle="modal" data-bs-target="#exampleModal">Continuar</button>
 
         </div>
     <?php  } ?>
     </div>
 </div>
+</div>
+<!--Modales-->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Selecciona tu tipo de envío</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div class="row">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="off">
+                            <label class="form-check-label" for="flexRadioDefault1">
+                                Envío a domicilio
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="off">
+                            <label class="form-check-label" for="flexRadioDefault2">
+                                Recoger en sucursal
+                            </label>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-dismiss="modal" data-bs-target="#DireccionEnvio">Continuar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="DireccionEnvio" tabindex="-1" aria-labelledby="DireccionEnvio" aria-hidden="true">
+    <div class="modal-lg modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="DireccionEnvio">Selecciona tu tipo de envío</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-6">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="Predeterminada" value="1">
+                            <div class="card form-check-label">
+                                <div class="card-body">
+                                    <h5 class="card-title">Predeterminada</h5>
+                                    <h6 class="card-subtitle mb-2 text-muted">Casa</h6>
+                                    <p class="card-text">Edi 10, 105-A, El Huerto, Cuautitlán</p>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="2">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Dirección</h5>
+                                    <h6 class="card-subtitle mb-2 text-muted">Alfredo</h6>
+                                    <p class="card-text">Av Del Rosal, 58, Santa Maria, Cuautitlan</p>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="3">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Dirección</h5>
+                                    <h6 class="card-subtitle mb-2 text-muted">Mamá</h6>
+                                    <p class="card-text">Pirules 38, Paseos de Cuautitlán, Cuautitlán</p>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-dismiss="modal" data-bs-target="#success">Continuar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="success" tabindex="-1" aria-labelledby="success" aria-hidden="true">
+    <div class="modal modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel3">Operación éxitosa</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="d-flex col-12  text-center align-self-center"><img src="img/done.png" alt="Confirmación" style="width: 100px;">Solicitud realizada</div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-dismiss="modal">Continuar</button>
+            </div>
+        </div>
+    </div>
 </div>
 <?php include('includes/footer.php'); ?>

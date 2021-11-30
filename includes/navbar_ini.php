@@ -37,6 +37,7 @@
             <li><a class="dropdown-item" href="cuenta.php?pill=0">Mi cuenta</a></li>
             <li><a class="dropdown-item" href="cuenta.php?pill=1">Mis direcciones</a></li>
             <li><a class="dropdown-item" href="cuenta.php?pill=2">Pedidos</a></li>
+            <li><a class="dropdown-item" href="cuenta.php?pill=3">Formas de pago</a></li>
 
             <li>
                 <hr class="dropdown-divider">

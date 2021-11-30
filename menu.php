@@ -57,7 +57,7 @@ $page = 2; ?>
                     $result_clientes = mysqli_query($conn, $query);
                     while ($row = mysqli_fetch_array($result_clientes)) {
                         if ($row['habilitar'] == 0) { ?>
-
+                                
                             <div class="card" style="width: 14rem; margin: 5px;">
                                 <div class="card-body">
                                     <h5 class="card-title"><?php echo $row['titulo'] ?></h5>

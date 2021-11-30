@@ -6,8 +6,8 @@ if (isset($_SESSION['nombre'])) {
     $iduser=$_SESSION['idusuario'];
 }
 if (isset($_SESSION['car'])) {
-    (int)$car = $_SESSION['car'];
-    $list = $_SESSION['list'];
+    (int)$car = $_SESSION['car']; /*Variable para almacenar elementos del carrito*/
+    $list = $_SESSION['list']; /** Listado de IDs de los productos */
     (int)$i = $_SESSION['i'];
 } ?>
 
