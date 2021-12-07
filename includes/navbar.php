@@ -18,12 +18,12 @@
                 if ($page == 2) {
                     echo '
                     <li class="nav-item">
-                        <a class="nav-link active" href="menu.php">Menú</a>
+                        <a class="nav-link active" href="menu.php?pill=0">Menú</a>
                     </li>';
                 } else {
                     echo '
                     <li class="nav-item">
-                        <a class="nav-link" href="menu.php">Menú</a>
+                        <a class="nav-link" href="menu.php?pill=0">Menú</a>
                     </li>';
                 }
                 ?>
