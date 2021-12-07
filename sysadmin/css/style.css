@@ -9,10 +9,16 @@ body {
     min-height: 300px;
     padding: 30px;
     margin-top: 30px;
+    margin-bottom: 30px;
 }
 .nomargin{
     margin: 0;
     padding: 0;
+}
+.tabla__clientes{
+    position: relative;
+    height: 100vh;
+    overflow: auto;
 }
 .nav_color_text {
     color: #D3D3D3;

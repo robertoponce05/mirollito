@@ -1,76 +1,95 @@
 html,
 body {
-    height: 100%;
+  height: 100%;
 }
-
+.btntarjeta {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+.dir{
+  
+  font-weight: 700;
+}
 .logo_sushi {
-    width: 50px;
-    height: auto;
+  width: 50px;
+  height: auto;
 }
-.bg_color{
-    background-color: #B3B3B3;
-    margin-top: 30px;
+.bg_color {
+  background-color: #b3b3b3;
+  margin-top: 30px;
 }
-.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
-    color: #FFF;
-    background-color: #681212;
-    border-color: #681212;
-    border-radius: 5px;
+.nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active {
+  color: #fff;
+  background-color: #681212;
+  border-color: #681212;
+  border-radius: 5px;
 }
-.nav-link:focus, .nav-link:hover {
-    color: #fff;
+.nav-link:focus,
+.nav-link:hover {
+  color: #fff;
 }
-.sidebar_cuenta{
-    text-align: center;
-    padding: 20px;
-    font-size: 18px;
+.sidebar_cuenta {
+  text-align: center;
+  padding: 20px;
+  font-size: 18px;
 }
-.contenido_cuenta{
-    padding: 30px;
+.contenido_cuenta {
+  padding: 30px;
 }
-.boton_color{
-    color: #681212;
+.boton_color {
+  color: #681212;
 }
 .carrito_div {
-    max-width: 800px;
-    background-color: rgb(253, 247, 247);
-    padding: 25px;
+  max-width: 800px;
+  background-color: rgb(253, 247, 247);
+  padding: 25px;
 }
-.input_text{
-    font-size: 12px;
+.input_text {
+  font-size: 12px;
 }
 .div_tama {
-    height: 90%;
+  height: 90%;
 }
 
 .img_carrusel {
-    width: 100%;
-    height: 600px;
-    background-size: cover;
+  width: 100%;
+  height: 600px;
+  background-size: cover;
 }
 
 .home_menu {
-    margin-bottom: 15px;
+  margin-bottom: 15px;
 }
 
 .mapa {
-    min-height: 400px;
+  min-height: 400px;
 }
 
 .contenedor_carrusel {
-    margin-bottom: 12px;
+  margin-bottom: 12px;
 }
 
 #wrapper {
-    min-height: 100%;
-    position: relative;
+  min-height: 100%;
+  position: relative;
+}
+#wrapper_black {
+  min-height: 100%;
+  position: relative;
+  /*background-color: #000;*/
 }
 
 #contenido {
-    padding-bottom: 100px;
+  padding-bottom: 100px;
 }
-.subtitulo_cuenta{
-    font-size: 16px;
+.subtitulo_cuenta {
+  font-size: 16px;
 }
 
 /*.contenedor_cuenta {
@@ -82,156 +101,153 @@ body {
 
 #shoppingItem,
 #username {
-    color: #FFF;
+  color: #fff;
 }
 
 .footer {
-    width: 100%;
-    height: 100px;
-    position: absolute;
-    bottom: 0;
-    left: 0;
+  width: 100%;
+  height: 100px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
-.ocultar{
-    display: none;
+.ocultar {
+  display: none;
 }
 .icono_redes {
-    display: grid;
+  display: grid;
 }
 
 .centrar {
-    justify-content: center;
-    display: flex;
-    text-align: center;
+  justify-content: center;
+  display: flex;
+  text-align: center;
 }
 
 .row_espacio {
-    margin-top: 20px;
-    margin-bottom: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .padre {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .contenedor_nosotros {
-    background-color: #FFF;
-    max-width: 800px;
-    padding: 30px;
+  background-color: #fff;
+  max-width: 800px;
+  padding: 30px;
 }
 
 @media (max-width: 752px) {
-    .img_carrusel {
-        width: 100%;
-        height: 300px;
-        background-size: cover;
-    }
-    .row_espacio {
-        margin-top: 20px;
-    }
-    .sidebar_cuenta{
-        display: flex;
-        padding: 10px;
-        margin: 10px;
-    }
-    .sidebar_p{
-        padding: 10px;
-        margin: 10px;
-        justify-content: center;
-    }
-    
+  .img_carrusel {
+    width: 100%;
+    height: 300px;
+    background-size: cover;
+  }
+  .row_espacio {
+    margin-top: 20px;
+  }
+  .sidebar_cuenta {
+    display: flex;
+    padding: 10px;
+    margin: 10px;
+  }
+  .sidebar_p {
+    padding: 10px;
+    margin: 10px;
+    justify-content: center;
+  }
 }
 
 @media (max-width: 380px) {
-    .img_carrusel {
-        width: 100%;
-        height: 200px;
-        background-size: cover;
-    }
-    .menu_padre {
-        display: flex;
-        justify-content: center;
-    }
-    .menu_hijo {
-        max-width: 800px;
-        padding: 30px;
-    }
-    
+  .img_carrusel {
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+  }
+  .menu_padre {
+    display: flex;
+    justify-content: center;
+  }
+  .menu_hijo {
+    max-width: 800px;
+    padding: 30px;
+  }
 }
 
 @media (min-width: 768px) {
-    .mapa {
-        height: 600px;
-    }
-    .menu {
-        min-height: 90%;
-    }
-    .contacto {
-        display: flex;
-        justify-content: end;
-    }
-    .reservados,
-    .centrar {
-        justify-content: left;
-    }
-    .sidebar_cuenta{
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        border-bottom: none;
-    }
-    .sidebar_border{
-        border-style: none solid;
-        border-left: none;
-        border-color: rgb(228, 226, 224);
-    }
-    .ocultar{
-        display: block;
-    }
-    
+  .mapa {
+    height: 600px;
+  }
+  .menu {
+    min-height: 90%;
+  }
+  .contacto {
+    display: flex;
+    justify-content: end;
+  }
+  .reservados,
+  .centrar {
+    justify-content: left;
+  }
+  .sidebar_cuenta {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-bottom: none;
+  }
+  .sidebar_border {
+    border-style: none solid;
+    border-left: none;
+    border-color: rgb(228, 226, 224);
+  }
+  .ocultar {
+    display: block;
+  }
 }
 
 .iniciar_sesion {
-    display: flex;
-    justify-content: center;
-    margin-top: 5%;
-    margin-bottom: 15%;
+  display: flex;
+  justify-content: center;
+  margin-top: 5%;
+  margin-bottom: 15%;
 }
 
 .enviar_sesion {
-    margin-top: 15px;
+  margin-top: 15px;
 }
 
 .img_item {
-    width: auto;
-    height: 130px;
-    background-size: cover;
+  width: auto;
+  height: 130px;
+  background-size: cover;
 }
 
 .form-group {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .contenedor_tabla {
-    max-width: 800px;
+  max-width: 800px;
 }
 
 .card_direccion {
-    margin: 5px;
+  margin: 5px;
 }
 
 .portada_img {
-    object-fit: cover;
-    height: 450px;
-    width: 100%;
+  object-fit: cover;
+  height: 450px;
+  width: 100%;
 }
 
 .nopadding {
-    padding: 0;
+  padding: 0;
 }
 
 .nolist {
-    list-style: none;
+  list-style: none;
 }

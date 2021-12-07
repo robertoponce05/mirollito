@@ -4,8 +4,8 @@ $in = 3;
 $page = 0;
 include("includes/header.php");  ?>
 <div class="col-8 col-md-10 fullHeight bg_contenido position-relative">
-    <div class="container">
-        <div class="table-responsive">
+    <div class="container contenedor_cuadro tabla__clientes">
+        <div class="table-responsive " >
             <table class="table">
                 <thead>
                     <tr>

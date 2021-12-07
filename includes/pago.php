@@ -106,12 +106,15 @@
                                                             <div class="row row_espacio">
                                                                 <div class="col-md-4">
                                                                     <h5 class="subtitulo_cuenta">Fecha de vencimiento:</h5>
-                                                                    <input type="month" title="Utiliza una fecha mayor o igual al mes y año actual. Utiliza '/' para separar mes y año" class="form-control" placeholder="MM/AA" name="vencimiento" value="<?php echo $fecha = substr($row['vencimiento'], 0, 7); ?>" required>
+                                                                    <div class="input-group date">
+                                                                        <input type="text" class="form-control"  data-date-format="YY MM" placeholder="MM/AA" name="vencimiento" value="<?php echo /*$fecha = substr($row['vencimiento'], 5, 2).'/'.*/substr($row['vencimiento'], 0, 7); ?>" required><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+                                                                    </div>
+                                                                    <!-- <input type="month" title="Utiliza una fecha mayor o igual al mes y año actual. Utiliza '/' para separar mes y año" class="form-control" placeholder="MM/AA" name="vencimiento" value="<?php echo $fecha = substr($row['vencimiento'], 0, 7); ?>" required> -->
                                                                 </div>
                                                                 <div class="col-md-4">
                                                                     <h5 class="subtitulo_cuenta">CVV</h5>
                                                                     <input type="hidden" value="<?php echo $row['id_card']; ?>" name="tarjeta">
-                                                                    <input type="text" class="form-control" placeholder="XXX" name="cvv" pattern="[0-9]{3}" value="<?php echo $row['cvv']; ?>" required>
+                                                                    <input type="password" class="form-control" placeholder="XXX" name="cvv" pattern="[0-9]{3}" value="<?php echo $row['cvv']; ?>" required>
                                                                 </div>
                                                                 <div class="col-6">
                                                                     <div class="form-check form-switch">
@@ -227,12 +230,15 @@
                                                             <div class="row row_espacio">
                                                                 <div class="col-md-4">
                                                                     <h5 class="subtitulo_cuenta">Fecha de vencimiento:</h5>
-                                                                    <input type="month" title="Utiliza una fecha mayor o igual al mes y año actual. Utiliza '/' para separar mes y año" class="form-control" placeholder="MM/AA" name="vencimiento" value="<?php echo $fecha = substr($row2['vencimiento'], 0, 7); ?>" required>
+                                                                    <div class="input-group date">
+                                                                        <input type="text" class="form-control"  data-date-format="YY MM" placeholder="MM/AA" name="vencimiento" value="<?php /*echo $fecha = substr($row2['vencimiento'], 5, 2).'/'.substr($row2['vencimiento'], 2, 2);*/ echo substr($row2['vencimiento'],0,7);?>" required><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+                                                                    </div>
+                                                                    <!-- <input type="month" title="Utiliza una fecha mayor o igual al mes y año actual. Utiliza '/' para separar mes y año" class="form-control" placeholder="MM/AA" name="vencimiento" value="<?php /*echo $fecha = substr($row2['vencimiento'], 0, 7);*/ ?>" required> -->
                                                                 </div>
                                                                 <div class="col-md-4">
                                                                     <h5 class="subtitulo_cuenta">CVV</h5>
                                                                     <input type="hidden" value="<?php echo $row2['id_card']; ?>" name="tarjeta">
-                                                                    <input type="text" class="form-control" placeholder="XXX" name="cvv" pattern="[0-9]{3}" value="<?php echo $row2['cvv']; ?>" required>
+                                                                    <input type="password" class="form-control" placeholder="XXX" name="cvv" pattern="[0-9]{3}" value="<?php echo $row2['cvv']; ?>" required>
                                                                 </div>
                                                                 <div class="col-6">
                                                                     <div class="form-check form-switch">
@@ -324,7 +330,10 @@
                                         <div class="row row_espacio">
                                             <div class="col-md-4">
                                                 <h5 class="subtitulo_cuenta">Fecha de vencimiento:</h5>
-                                                <input type="month" title="Utiliza una fecha mayor o igual al mes y año actual. Utiliza '/' para separar mes y año" class="form-control" placeholder="MM/AA" name="vencimiento" required>
+                                                <div class="input-group date">
+                                                    <input type="text" class="form-control" readonly="" data-date-format="YYYY MM" placeholder="MM/AA" name="vencimiento" required><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+                                                </div>
+                                                <!-- <input type="text" data-date="" data-date-format="MM YY" class="form-control" placeholder="MM/AA" name="vencimiento" required> -->
                                             </div>
                                             <div class="col-md-4">
                                                 <h5 class="subtitulo_cuenta">CVV</h5>

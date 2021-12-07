@@ -82,7 +82,7 @@ $page = 2; ?>
                                             <div class="modal-body">
                                                 <div class="container">
                                                     <div class="row">
-                                                        <div class="col-12 col-lg-6 form-group"><img class="img-fluid" src="img/item.jpg" alt="item"></div>
+                                                        <div class="col-12 col-lg-6 form-group"><img class="img-fluid" src="img/menu_img/<?php echo $id_item ?>.jpg" alt="item"></div>
                                                         <div class="col col-lg-6">
                                                             <div class="row row_espacio">
 

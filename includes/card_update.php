@@ -46,7 +46,7 @@ if (isset($_SESSION['idusuario'])) {
                     }
                 }
                 $query_mod = "UPDATE tarjetas SET principal='1' WHERE id_card='$id_tarjeta'";
-                echo $query_mod;
+                echo '/n'.$query_mod;
                 /*$resultado = $conn->query($query_mod);*/
                 if ($result) {
                     echo 'predeterminados limpiados';

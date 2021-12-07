@@ -8,7 +8,7 @@
                 <div class="row">
                     <div class="mb-3 col-md-4">
                         <h5 class="subtitulo_cuenta">Nombre(s):</h5>
-                        <input type="text" id="" class="form-control" value="<?php echo $result1['nombre'] ?>">
+                        <input type="text" id="" class="form-control" name="nombre" value="<?php echo $result1['nombre'] ?>">
                     </div>
                     <div class="mb-3 col-md-4">
                         <h5 class="subtitulo_cuenta">Primer apellido</h5>

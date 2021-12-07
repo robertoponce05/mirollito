@@ -21,7 +21,16 @@ $result1 = mysqli_fetch_array($result);
 ?>
 
 <body>
-    <div id="wrapper">
+    <div id="wrapper_black">
+        <?php if (isset($_SESSION['message'])) { ?>
+            <div class="alert alert-<?= $_SESSION['message_type'] ?> alert-dismissible fade show " style="margin-bottom:0" role="alert">
+                <?= $_SESSION['message']; ?>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+
+        <?php unset($_SESSION['message']);
+            unset($_SESSION['message_type']);
+        } ?>
         <div class="container bg_color">
             <div class="row">
                 <div class="col-sm-12 col-md-3 col-lg-2 sidebar_cuenta sidebar_border">
@@ -33,46 +42,50 @@ $result1 = mysqli_fetch_array($result);
                     <ul class="nav nav-tabs sidebar_cuenta" id="myTab" role="tablist">
                         <li class="nav-item" role="presentation">
                             <button class="nav-link boton_color <?php if (isset($_GET['pill']) and $_GET['pill'] == '0') {
-                                                    echo 'show active';
-                                                } ?>" id="perfil-tab" data-bs-toggle="tab" data-bs-target="#perfil" type="button" role="tab" aria-controls="home" aria-selected="true">Perfil</button>
+                                                                    echo 'show active';
+                                                                } ?>" id="perfil-tab" data-bs-toggle="tab" data-bs-target="#perfil" type="button" role="tab" aria-controls="home" aria-selected="true">Perfil</button>
                         </li>
                         <li class="nav-item" role="presentation">
                             <button class="nav-link boton_color <?php if (isset($_GET['pill']) and $_GET['pill'] == '3') {
-                                                    echo 'show active';
-                                                } ?>" id="pago-tab" data-bs-toggle="tab" data-bs-target="#pago" type="button" role="tab" aria-controls="pago" aria-selected="false">Formas de pago</button>
+                                                                    echo 'show active';
+                                                                } ?>" id="pago-tab" data-bs-toggle="tab" data-bs-target="#pago" type="button" role="tab" aria-controls="pago" aria-selected="false">Formas de pago</button>
                         </li>
                         <li class="nav-item" role="presentation">
                             <button class="nav-link boton_color <?php if (isset($_GET['pill']) and $_GET['pill'] == '2') {
-                                                    echo 'show active';
-                                                } ?>" id="pedidos-tab" data-bs-toggle="tab" data-bs-target="#pedidos" type="button" role="tab" aria-controls="pedidos" aria-selected="false">Pedidos</button>
+                                                                    echo 'show active';
+                                                                } ?>" id="pedidos-tab" data-bs-toggle="tab" data-bs-target="#pedidos" type="button" role="tab" aria-controls="pedidos" aria-selected="false">Pedidos</button>
                         </li>
                         <li class="nav-item" role="presentation">
                             <button class="nav-link boton_color <?php if (isset($_GET['pill']) and $_GET['pill'] == '1') {
-                                                    echo 'show active';
-                                                } ?>" id="direcciones-tab" data-bs-toggle="tab" data-bs-target="#direcciones" type="button" role="tab" aria-controls="direcciones" aria-selected="false">Direcciones</button>
+                                                                    echo 'show active';
+                                                                } ?>" id="direcciones-tab" data-bs-toggle="tab" data-bs-target="#direcciones" type="button" role="tab" aria-controls="direcciones" aria-selected="false">Direcciones</button>
                         </li>
                     </ul>
                 </div>
                 <div class="col-sm-12 col-md-9 col-lg-10 contenido_cuenta">
                     <div class="tab-content">
                         <div class="tab-pane <?php if (isset($_GET['pill']) and $_GET['pill'] == '0') {
-                                                        echo 'show active'; unset($_GET['pill']);
-                                                    } ?>" id="perfil" role="tabpanel" aria-labelledby="perfil-tab">
+                                                    echo 'show active';
+                                                    unset($_GET['pill']);
+                                                } ?>" id="perfil" role="tabpanel" aria-labelledby="perfil-tab">
                             <?php include("includes/perfil.php"); ?>
                         </div>
                         <div class="tab-pane <?php if (isset($_GET['pill']) and $_GET['pill'] == '3') {
-                                                        echo 'show active'; unset($_GET['pill']);
-                                                    } ?>" id="pago" role="tabpanel" aria-labelledby="pago-tab">
+                                                    echo 'show active';
+                                                    unset($_GET['pill']);
+                                                } ?>" id="pago" role="tabpanel" aria-labelledby="pago-tab">
                             <?php include("includes/pago.php"); ?>
                         </div>
                         <div class="tab-pane <?php if (isset($_GET['pill']) and $_GET['pill'] == '2') {
-                                                        echo 'show active'; unset($_GET['pill']);
-                                                    } ?>" id="pedidos" role="tabpanel" aria-labelledby="pedidos-tab">
+                                                    echo 'show active';
+                                                    unset($_GET['pill']);
+                                                } ?>" id="pedidos" role="tabpanel" aria-labelledby="pedidos-tab">
                             <?php include("includes/pedidos.php"); ?>
                         </div>
                         <div class="tab-pane <?php if (isset($_GET['pill']) and $_GET['pill'] == '1') {
-                                                        echo 'show active'; unset($_GET['pill']);
-                                                    } ?>" id="direcciones" role="tabpanel" aria-labelledby="direcciones-tab">
+                                                    echo 'show active';
+                                                    unset($_GET['pill']);
+                                                } ?>" id="direcciones" role="tabpanel" aria-labelledby="direcciones-tab">
                             <?php include("includes/direcciones.php"); ?>
                         </div>
                     </div>

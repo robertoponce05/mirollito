@@ -34,4 +34,4 @@ if ($filas > 0) {
         $_SESSION['message_type'] = 'warning';
     }
 }
-/*header('Location:../cuenta.php?pill=3');*/
+header('Location:../cuenta.php?pill=3');
