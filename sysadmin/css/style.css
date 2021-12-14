@@ -1,70 +1,108 @@
 html,
 body {
-    height: 100%;
-    overflow: hidden;
-    margin: 0;
+  height: 100%;
+  overflow: hidden;
+  margin: 0;
 }
-.contenedor_cuadro{
-    background-color: #FFF;
-    min-height: 300px;
-    padding: 30px;
-    margin-top: 30px;
-    margin-bottom: 30px;
+.id_desactivado{
+  color: #a2a2a2;
 }
-.nomargin{
-    margin: 0;
-    padding: 0;
+a:hover {
+  color: #681212 !important;
 }
-.tabla__clientes{
-    position: relative;
-    height: 100vh;
-    overflow: auto;
+.hover_a:hover{
+  color: #fff!important;
+}
+.a__habilitar:hover{
+  color: #fff!important;
+}
+.a__habilitar{
+  text-decoration: none!important;
+  color: #198754!important;
+}
+.a__des:hover{
+  color: #FFF!important;
+}
+.a__des{
+  text-decoration: none!important;
+  color: #dc3545!important;
+}
+.left20{
+    margin: 0rem .3rem 0rem 1rem!important;
+    padding-right: 0;
+    
+}
+.nav_pedidos {
+  margin-left:  1.3rem!important;
+  text-decoration: none!important;
+}
+.img_item {
+  max-height: 80px;
+}
+.img_modal {
+  max-height: 90px;
+}
+.contenedor_cuadro {
+  background-color: #fff;
+  min-height: 300px;
+  padding: 30px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.nomargin {
+  margin: 0;
+  padding: 0;
+}
+.tabla__clientes {
+  position: relative;
+  height: 85vh;
+  overflow: auto;
 }
 .nav_color_text {
-    color: #D3D3D3;
-    margin: 5px;
+  color: #d3d3d3;
+  margin: 5px;
 }
 
 .colorblack {
-    color: #597e8d;
+  color: #597e8d;
 }
 
 .fullHeight {
-    height: 100vh;
-    background-color: #686868;
+  height: 100vh;
+  background-color: #686868;
 }
 
 .lateral {
-    height: 95vh;
+  height: 95vh;
 }
 
 .logo_sushi {
-    width: 45px;
+  width: 45px;
 }
 
 .bg_contenido {
-    background-color: #D3D3D3;
-    /*width: 100vh;*/
+  background-color: #d3d3d3;
+  /*width: 100vh;*/
 }
 
 .contenido {
-    padding: 30px;
-    height: 95%;
-    margin-bottom: 15px;
+  padding: 30px;
+  height: 95%;
+  margin-bottom: 15px;
 }
 
 .salto {
-    margin-top: 25px;
+  margin-top: 25px;
 }
 
 .scroll_column {
-    float: left;
-    height: 100%;
-    overflow: auto;
-    box-sizing: border-box;
-    padding: 30px;
-    scrollbar-width: none;
+  float: left;
+  height: 100%;
+  overflow: auto;
+  box-sizing: border-box;
+  padding: 30px;
+  scrollbar-width: none;
 }
-.alerta{
-    margin: 0 !important;
+.alerta {
+  margin: 0 !important;
 }

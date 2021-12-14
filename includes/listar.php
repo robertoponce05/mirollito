@@ -38,7 +38,7 @@ if (isset($_POST['id'])) {
         (int)$_SESSION['i'] = $i;
         $_SESSION['messag'] = 'Añadido al carrito';
         $_SESSION['message_typ'] = 'success';
-        header("location:../menu.php");
+        header("location:../menu.php?pill=0");
     }
 } 
 

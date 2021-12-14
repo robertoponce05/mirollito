@@ -23,7 +23,7 @@ if (isset($_POST['user'])) {
         echo 'sesión iniciada';
         $_SESSION['nombre']= $result2['nombre'];
         $_SESSION['idusuario']=$result2['idusuario'];
-        header("location:../menu.php");
+        header("location:../menu.php?pill=0");
 
     } else {
         $_SESSION['message'] = 'Datos incorrectos';

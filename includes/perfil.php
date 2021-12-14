@@ -3,43 +3,42 @@
 
 
     <div class="container-sm row_espacio">
-        <form action="">
+        <form action="/includes/actualizar.php" method="POST">
             <fieldset>
                 <div class="row">
-                    <div class="mb-3 col-md-4">
+                    <div class="mb-3 col-md-4" >
                         <h5 class="subtitulo_cuenta">Nombre(s):</h5>
-                        <input type="text" id="" class="form-control" name="nombre" value="<?php echo $result1['nombre'] ?>">
+                        <input type="text" name="nombre" class="form-control" placeholder="Nombres" required value="<?php echo $result1['nombre'] ?>">
                     </div>
                     <div class="mb-3 col-md-4">
                         <h5 class="subtitulo_cuenta">Primer apellido</h5>
-                        <input type="text" id="disabledTextInput" class="form-control" value="<?php echo $result1['p_apellido'] ?>">
+                        <input type="text" name="pape" class="form-control" placeholder="Apellido Paterno" required value="<?php echo $result1['p_apellido'] ?>">
                     </div>
                     <div class="mb-3 col-md-4">
                         <h5 class="subtitulo_cuenta">Segundo apellido</h5>
-                        <input type="text" id="disabledTextInput" class="form-control" value="<?php echo $result1['s_apellido'] ?>">
+                        <input type="text" name="sape" class="form-control" placeholder="Apellido Materno (opcional)" value="<?php echo $result1['s_apellido'] ?>">
                     </div>
                 </div>
                 <div class="row">
                     <div class="mb-3 col-md-6">
                         <h5 class="subtitulo_cuenta">Correo electrónico:</h5>
-
-                        <input type="email" id="disabledTextInput" class="form-control" value="<?php echo $result1['correo'] ?>">
+                        <input type="email" name="mail" class="form-control" placeholder="correo electrónico" required value="<?php echo $result1['correo'] ?>">
                     </div>
                     <div class="mb-3 col-md-6">
 
                         <h5 class="subtitulo_cuenta">Número celular:</h5>
-                        <input type="text" id="disabledTextInput" class="form-control" value="+52<?php echo ' ' . $result1['telefono'] ?>">
-
+                        <input type="text" name="numero" class="form-control" placeholder="número celular" value="<?php echo $result1['telefono'] ?>">
+                <input type="hidden" name="id" value="<?php echo $iduser;?>">
                     </div>
                 </div>
                 <div class="row  row_espacio">
                     <div class="mb-3 col-md-6">
                         <h5 class="subtitulo_cuenta">Contraseña:</h5>
-                        <input type="password" id="disabledTextInput" class="form-control" placeholder="*********">
+                        
                     </div>
                     <div class="mb-3 col-md-6">
                         <h5 class="subtitulo_cuenta">Confirmar contraseña:</h5>
-                        <input type="password" id="disabledTextInput" class="form-control" placeholder="">
+                        
                     </div>
                 </div>
 

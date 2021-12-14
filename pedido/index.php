@@ -1,6 +1,8 @@
 <?php
+$page=0;
 include('../includes/db.php');
 include("../includes/header.php");
+include('../includes/navbar.php');
 if (isset($_SESSION['list'])) {
     $lista = array();
     $lista = $_SESSION['list'];
@@ -8,7 +10,7 @@ if (isset($_SESSION['list'])) {
     header("location:/");
 }
 ?>
-<div class="container-sm div_tama row_espacio">
+<div class="container-sm row_espacio">
     <?php include('includes/resumen.php'); ?>
     <div class="container row_espacio carrito_div">
     <form action="includes/generate.php" method="POST">
@@ -37,16 +39,17 @@ if (isset($_SESSION['list'])) {
         <div class="row row_espacio justify-content-center">
             <div class="col-4">
                 <div class="d-grid gap-2">
-                    <a class="btn btn-outline-secundary" href="/carrito.php">Regresar</a>
+                    <a class="btn btn-outline-secundary row_espacio" href="/carrito.php">Regresar</a>
 
                 </div>
             </div>
             <div class="col-4">
                 <div class="d-grid gap-2">
-                    <input type="submit" class="btn btn-outline-success" value="Continuar">
+                    <input type="submit" class="btn btn-outline-success row_espacio" value="Continuar">
                 </div>
             </div>
             </form>
         </div>
     </div>
 </div>
+<?php include('../includes/footer.php');?>

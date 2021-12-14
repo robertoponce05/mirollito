@@ -12,7 +12,7 @@ if (isset($_SESSION['idusuario'])) {
         $cvv = $_POST['cvv'];
         $alias = $_POST['alias'];
         $id = $_SESSION['idusuario'];
-        $id_tarjeta = $_POST['tarjeta'];
+        //$id_tarjeta = $_POST['tarjeta'];
 
         if (isset($_POST['predeterminada'])) { /* Predeterminar tarjeta */
             $prede = 1;

@@ -9,39 +9,31 @@
                     <line x1="5" y1="12" x2="19" y2="12" />
                 </svg></a>
         </div>
-    </div>
-    <div class="row">
-        <div class="card col-md-8">
-            <div class="card-body">
-                <h5 class="card-title">Predeterminada</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Casa</h6>
-                <p class="card-text">Edi 10 - 105-A, El Huerco, Cuautitlán</p>
-                <a class="card-link" data-bs-toggle="modal" data-bs-target="#EditaDireccion">Editar</a>
+        <div class="row">
 
-            </div>
+
+            <?php
+            $queryDir = "SELECT DISTINCT * FROM direcciones WHERE idusuario = $iduser and habilitar = 1 ORDER BY id_dir DESC;";
+            $resDir = mysqli_query($conn, $queryDir);
+            $filasDir = mysqli_num_rows($resDir);
+            if ($filasDir > 0) {
+                while ($row = mysqli_fetch_array($resDir)) {
+                    include('includes/showDir.php');
+                    include('includes/edit_dir.php');
+                }
+            } else {
+            ?>
+                <div class="col-9">
+                    <h3 class="titulo_cuenta row_espacio">No hay direcciones para mostrar</h3>
+                </div>
+            <?php } ?>
         </div>
     </div>
+
     <div class="row row_espacio">
-        <h5>Otras direcciones</h5>
-        <div class="card col-md-6">
-            <div class="card-body card_direccion">
 
-                <h6 class="card-subtitle mb-2 text-muted">Alfredo</h6>
-                <p class="card-text">Edi 10 - 105-A, El Huerco, Cuautitlán</p>
-                <a class="card-link" data-bs-toggle="modal" data-bs-target="#EditaDireccion">Editar</a>
 
-            </div>
-        </div>
 
-        <div class="card col-md-6">
-            <div class="card-body card_direccion">
-
-                <h6 class="card-subtitle mb-2 text-muted">Mamá</h6>
-                <p class="card-text">Edi 10 - 105-A, El Huerco, Cuautitlán</p>
-                <a class="card-link" data-bs-toggle="modal" data-bs-target="#EditaDireccion">Editar</a>
-
-            </div>
-        </div>
 
     </div>
 

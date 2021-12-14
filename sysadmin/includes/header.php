@@ -34,8 +34,9 @@
             echo 'SysAdmin: Clientes';
         }else if($in==4){
             echo 'SysAdmin: Empleados';
-        }echo 'SysAdmin'
+        }else{echo 'SysAdmin: Pedidos finalizados';}
     ?></title>
+    <link rel="icon" type="image/x-icon" href="/img/sysadmin.ico">
 
 </head>
 
@@ -52,7 +53,7 @@
         <div class="row nomargin ">
             <div class="nav flex-column col-4 col-md-2 fullHeight">
                 
-                <a class="nav-link active position-relative nav_color_text" aria-current="page" href="/sysadmin/sysadmin.php">Home
+                <a class="nav-link position-relative nav_color_text" aria-current="page" href="/sysadmin/sysadmin.php">Home
                 <?php 
                     if($in==0){
                         echo '<img class="position-absolute top-0 start-100" src="img/selector.png" alt=""></a><!--esta entrando-->';
@@ -60,17 +61,17 @@
                         echo '</a> <!--esta entrando-->';
                     }
                 ?>
-                <a class="nav-link nav_color_text position-relative" href="/sysadmin/productos.php">Productos
+                <p class="nav_color_text nav_pedidos" >Pedidos</p>
+                <a class="nav-link nav_color_text position-relative left20" href="/sysadmin/pedidos.php" >En curso
                 <?php 
-                    if($in==1){
+                    if($in==2){
                         echo '<img class="position-absolute top-0 start-100" src="img/selector.png" alt=""></a>';
                     }else{
                         echo '</a>';
                     }
-                ?>
-                <a class="nav-link nav_color_text position-relative" href="/sysadmin/pedidos.php" style="margin-top: 10px;">Pedidos
+                ?><a class="nav-link nav_color_text position-relative left20" href="/sysadmin/finalizados.php">Terminados
                 <?php 
-                    if($in==2){
+                    if($in==5){
                         echo '<img class="position-absolute top-0 start-100" src="img/selector.png" alt=""></a>';
                     }else{
                         echo '</a>';
@@ -84,6 +85,16 @@
                         echo '</a>';
                     }
                 ?>
+                <a class="nav-link nav_color_text position-relative" href="/sysadmin/productos.php">Productos
+                <?php 
+                    if($in==1){
+                        echo '<img class="position-absolute top-0 start-100" src="img/selector.png" alt=""></a>';
+                    }else{
+                        echo '</a>';
+                    }
+                ?>
+                
+                
                 <a class="nav-link nav_color_text position-relative" href="/sysadmin/empleados.php">Empleados
                 <?php 
                     if($in==4){

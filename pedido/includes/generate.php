@@ -7,13 +7,13 @@ $tipopedido = $_SESSION['envio'];
 $total = $_SESSION['total'];
 echo 'ID USER: ' . $iduser;
 if ($tipopedido == 1 and $_POST['check-metodo'] == 'efectivo') {
-    $tipopedido = 2;
-} elseif ($tipopedido == 1 and $_POST['check-metodo'] > 0) {
-    $tipopedido = 1;
-} elseif ($tipopedido == 2 and $_POST['check-metodo'] > 0) {
-    $tipopedido = 3;
-} elseif ($tipopedido == 2 and $_POST['check-metodo'] == 'efectivo') {
     $tipopedido = 4;
+} elseif ($tipopedido == 1 and (int)$_POST['check-metodo'] > 0) {
+    $tipopedido = 3;
+} elseif ($tipopedido == 2 and (int)$_POST['check-metodo'] > 0) {
+    $tipopedido = 1;
+} elseif ($tipopedido == 2 and (int)$_POST['check-metodo'] == 'efectivo') {
+    $tipopedido = 2;
 }
 if (isset($_SESSION['list'])) {
     $lista = array();

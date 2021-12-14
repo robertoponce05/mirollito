@@ -34,7 +34,7 @@ include("includes/header.php");  ?>
                     <div class="card" style="width: 15rem; margin: 5px; max-height: 20rem;">
                         <div class="card-body">
                             <h5 class="card-title"><?php echo $row['titulo'] ?></h5>
-                            <img class="img-fluid img_item" src="../img/menu_img/<?php echo $row['id_item'] ?>.jpg" alt="item">
+                            <img class="img-fluid img_item" src="../img/menu_img/<?php echo $row['id_item'] ?>.jpg" alt="item" style="max-height: 110px;">
                             <p class="card-text"><?php echo $row['detalle'] ?></p><?php $id_item = $row['id_item']; ?>
                             <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#modalProduct<?php echo $row['id_item'] ?>">
                                 Ver más
@@ -55,7 +55,7 @@ include("includes/header.php");  ?>
                                     <div class="modal-body">
                                         <div class="container">
                                             <div class="row">
-                                                <div class="col-12 col-lg-6 form-group"><img class="img-fluid" src="../img/menu_img/<?php echo $row['id_item'] ?>.jpg" alt="item"> <input type="file"> </div>
+                                                <div class="col-12 col-lg-6 form-group img_modal"><img class="img-fluid" src="../img/menu_img/<?php echo $row['id_item'] ?>.jpg" alt="item" style="max-height: 280px;"> <input type="file"> </div>
                                                 <div class="col col-lg-6">
                                                     <div class="row row_espacio">
 
@@ -143,7 +143,7 @@ include("includes/header.php");  ?>
                     <div class="card" style="width: 15rem; margin: 5px; max-height: 20rem;">
                         <div class="card-body">
                             <h5 class="card-title"><?php echo $row['titulo'] ?></h5>
-                            <img class="img-fluid img_item" src="../img/menu_img/<?php echo $row['id_item'] ?>.jpg" alt="item">
+                            <img class="img-fluid img_item" src="../img/menu_img/<?php echo $row['id_item'] ?>.jpg" alt="Producto" style="max-height: 110px;">
                             <p class="card-text"><?php echo $row['detalle'] ?></p><?php $id_item = $row['id_item']; ?>
                             <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#modalProduct<?php echo $row['id_item'] ?>">
                                 Ver más
@@ -164,7 +164,7 @@ include("includes/header.php");  ?>
                                     <div class="modal-body">
                                         <div class="container">
                                             <div class="row">
-                                                <div class="col-12 col-lg-6 form-group"><img class="img-fluid" ssrc="../img/menu_img/<?php echo $row['id_item'] ?>.jpg" alt="item"> <input type="file"> </div>
+                                                <div class="col-12 col-lg-6 form-group"><img class="img-fluid" style="max-height: 250px;" src="/img/menu_img/<?php echo $id_item; ?>.jpg" alt="Producto"> <input type="file"> </div>
                                                 <div class="col col-lg-6">
                                                     <div class="row row_espacio">
 

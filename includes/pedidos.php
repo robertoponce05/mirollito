@@ -3,6 +3,7 @@ $idususario = $_SESSION['idusuario'];
 $query = "SELECT * FROM pedidos WHERE id_cliente=$idususario";
 $query2 = "SELECT productos_vendidos.id_producto, productos_vendidos.cantidad, productos_vendidos.id_pedido, productos.titulo, productos.precio FROM productos_vendidos INNER JOIN productos ON productos_vendidos.id_producto=productos.id_item";
 $result_pedidos = mysqli_query($conn, $query);
+//header("Refresh:30");
 //echo $query;
 
 ?>
@@ -31,8 +32,10 @@ $result_pedidos = mysqli_query($conn, $query);
                                             <h4 class="">
                                                 Pedido #<?php echo $row['id_pedido']; ?>: <?php if (isset($row['id_dir'])) {
                                                                                                 echo 'Pedido a domicilio';
+                                                                                                $recolectar=0;
                                                                                             } else {
                                                                                                 echo 'Pedido para recoger en sucursal';
+                                                                                                $recolectar=1;
                                                                                             } ?>
                                             </h4>
                                         </div>
@@ -104,9 +107,12 @@ $result_pedidos = mysqli_query($conn, $query);
                                         }elseif($row4['id_status']==3){
                                             $progre=60;
                                             $text='Comenzamos a preparar tu pedido';
+                                        }elseif($row4['id_status']==4 and $recolectar==1){
+                                            $progre=80;
+                                            $text='Listo. Te esperamos en sucursal para entregarte tu pedido.';
                                         }elseif($row4['id_status']==4){
                                             $progre=80;
-                                            $text='Terminamos tu pedido';
+                                            $text='Terminamos de preparar tu pedido';
                                         }elseif($row4['id_status']==5){
                                             $progre=90;
                                             $text='Hemos enviado tu pedido';
@@ -170,9 +176,10 @@ $result_pedidos = mysqli_query($conn, $query);
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php while ($row = mysqli_fetch_array($result_pedidos1)) { ?>
+                                <?php while ($row = mysqli_fetch_array($result_pedidos1)) { 
+                                    ?>
                                     <tr>
-                                        <th scope="row"><?php echo $row['id_pedido']; ?></th>
+                                        <th scope="row"><?php echo $row['id_pedido'];  ?></th>
                                         <?php if($row['estatus']==6){
                                             $edo = 'Finalizado';
                                         }elseif($row['estatus']==7){
@@ -182,16 +189,18 @@ $result_pedidos = mysqli_query($conn, $query);
                                         <td>
                                             <p>
                                                 <?php
-                                                echo ' ' . substr($row['fecha_pedido'], 8, 2) . '/' . substr($row['fecha_pedido'], 5, 2) . '/' . substr($row['fecha_pedido'], 2, 2) . ' a las ' . substr($row['fecha_pedido'], 11, 5) . ' horas';
+                                                
+                                                echo ' ' . substr($row['fecha_finalizado'], 8, 2) . '/' . substr($row['fecha_finalizado'], 5, 2) . '/' . substr($row['fecha_finalizado'], 2, 2) . ' a las ' . substr($row['fecha_finalizado'], 11, 5) . ' horas';
                                                 ?>
                                             </p>
                                         </td>
                                         <td>
                                             <?php
-                                            $querypedidos = "SELECT pedidos.estatus, pedidos.id_pedido, pedidos.notas, pedidos.tipo_pedido, pedidos.total, 
-                                            productos_vendidos.cantidad, productos.titulo FROM pedidos INNER JOIN productos_vendidos INNER JOIN 
-                                            productos ON pedidos.id_cliente=$idususario AND (pedidos.estatus>5 && pedidos.estatus<8) AND 
-                                            productos_vendidos.id_pedido = pedidos.id_pedido AND productos.id_item=productos_vendidos.id_pedido";
+                                            $querypedidos="SELECT pedidos.total, productos_vendidos.id_producto, productos.id_item, productos_vendidos.cantidad, productos.titulo, pedidos.id_pedido,pedidos.notas,pedidos.id_dir FROM productos_vendidos INNER JOIN productos ON productos_vendidos.id_producto=productos.id_item INNER JOIN pedidos ON pedidos.id_pedido = productos_vendidos.id_pedido AND pedidos.id_cliente =$idususario AND pedidos.estatus>5 ";
+                                            // $querypedidos = "SELECT pedidos.estatus, pedidos.id_pedido, pedidos.notas, pedidos.tipo_pedido, pedidos.total, 
+                                            // productos_vendidos.cantidad, productos.titulo FROM pedidos INNER JOIN productos_vendidos INNER JOIN 
+                                            // productos ON pedidos.id_cliente=$idususario AND (pedidos.estatus>5 && pedidos.estatus<8) AND 
+                                            // productos_vendidos.id_pedido = pedidos.id_pedido AND productos.id_item=productos_vendidos.id_pedido";
                                             $resw = mysqli_query($conn, $querypedidos);
                                             while ($roww = mysqli_fetch_array($resw)) {
                                                 if ($roww['id_pedido'] == $row['id_pedido']) {

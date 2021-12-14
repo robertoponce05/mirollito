@@ -1,5 +1,9 @@
 <?php include('includes/db.php');
-$page = 6; ?>
+$page = 6; 
+if (isset($_GET['pill']) and $_GET['pill'] == '2'){
+    header("Refresh:30");
+} 
+?>
 <?php include("includes/header.php");
 if ($nombre == null || $nombre = '') {
     $_SESSION['message'] = 'Primero debes iniciar sesión';
@@ -195,13 +199,11 @@ $result1 = mysqli_fetch_array($result);
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <div class="container">
-                        <div class="row">
-                            <div class="container-sm">
-                                <h5 class="titulo_cuenta row_espacio">Ingresa tu nueva dirección</h5>
-
-
-                                <form action="/includes/registrar.php" method="$_POST">
+                    <form action="/includes/add_dir.php" method="POST">
+                        <div class="container">
+                            <div class="row">
+                                <div class="container-sm">
+                                    <h5 class="titulo_cuenta row_espacio">Ingresa tu nueva dirección</h5>
                                     <fieldset>
                                         <div class="mb-3">
                                             <div class="row">
@@ -228,6 +230,10 @@ $result1 = mysqli_fetch_array($result);
                                         <div class="mb-3 row_espacio">
                                             <div class="row">
                                                 <div class="col-4">
+                                                    <h5 class="subtitulo_cuenta">Calle:</h5>
+                                                    <input type="text" class="form-control" name="calle">
+                                                </div>
+                                                <div class="col-4">
                                                     <h5 class="subtitulo_cuenta">Exterior:</h5>
                                                     <input type="text" class="form-control" placeholder="" name="exterior">
                                                 </div>
@@ -235,7 +241,8 @@ $result1 = mysqli_fetch_array($result);
                                                     <h5 class="subtitulo_cuenta">Interior:</h5>
                                                     <input type="text" class="form-control" placeholder="" name="interior">
                                                 </div>
-                                                <div class="col-4">
+
+                                                <div class="col-12">
                                                     <h5 class="subtitulo_cuenta">Referencias:</h5>
                                                     <input type="text" class="form-control" name="referencias">
                                                 </div>
@@ -243,20 +250,21 @@ $result1 = mysqli_fetch_array($result);
                                         </div>
 
                                     </fieldset>
-                                </form>
 
+
+
+
+                                </div>
 
 
                             </div>
-
-
                         </div>
-                    </div>
                 </div>
                 <div class="modal-footer">
 
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-dismiss="modal" data-bs-target="#success">Agregar dirección</button>
+                    <button type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-dismiss="modal" data-bs-target="#success">Agregar dirección</button>
                 </div>
+                </form>
             </div>
         </div>
     </div>
@@ -286,79 +294,7 @@ $result1 = mysqli_fetch_array($result);
 
 
 
-    <div class="modal fade" id="EditaDireccion" tabindex="-1" aria-labelledby="EditaDireccion" aria-hidden="true">
-        <div class="modal-lg modal-dialog modal-dialog-centered modal-dialog-scrollable">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="EditaDireccion">Editar dirección</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-
-                    <div class="container-sm">
-                        <h5 class="titulo_cuenta row_espacio">Edita los campos:</h5>
-
-
-                        <form action="">
-                            <fieldset>
-                                <div class="mb-3">
-                                    <div class="row">
-                                        <div class="col-4">
-                                            <h5 class="subtitulo_cuenta">Alias: </h5>
-                                            <input type="text" class="form-control" placeholder="Casa">
-                                        </div>
-                                    </div>
-                                    <div class="row row_espacio">
-                                        <div class="col-4">
-                                            <h5 class="subtitulo_cuenta">Código postal:</h5>
-                                            <input type="text" class="form-control" placeholder="54807">
-                                        </div>
-                                        <div class="col-4">
-                                            <h5 class="subtitulo_cuenta">Colonia:</h5>
-                                            <input type="text" class="form-control" placeholder="El Huerco">
-                                        </div>
-                                        <div class="col-4">
-                                            <h5 class="subtitulo_cuenta">Municipio:</h5>
-                                            <input type="text" class="form-control" placeholder="Cuautitlán">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mb-3 row_espacio">
-                                    <div class="row">
-                                        <div class="col-4">
-                                            <h5 class="subtitulo_cuenta">Exterior:</h5>
-                                            <input type="text" class="form-control" placeholder="Edi 10">
-                                        </div>
-                                        <div class="col-4">
-                                            <h5 class="subtitulo_cuenta">Interior:</h5>
-                                            <input type="text" class="form-control" placeholder="105-A">
-                                        </div>
-                                        <div class="col-4">
-                                            <h5 class="subtitulo_cuenta">Referencias:</h5>
-                                            <input type="text" class="form-control" placeholder="Entre Calle 1 y Calle 2">
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                            </fieldset>
-                        </form>
-
-
-
-                    </div>
-                </div>
-                <div class="modal-footer">
-
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-dismiss="modal" data-bs-target="#success">Confirmar</button>
-                </div>
-
-            </div>
-
-
-        </div>
-
-    </div>
+    
 
     </div>
     </div>

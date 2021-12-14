@@ -36,7 +36,7 @@
                             </div>
 
                             <div class="modal fade" id="modalProduct<?php echo $id_item ?>" tabindex="-1" aria-labelledby="<?php echo $id_item ?>" aria-hidden="true">
-                                <div class="modal-xl modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                <div class="modal-lg modal-dialog modal-dialog-centered modal-dialog-scrollable">
                                     <div class="modal-content">
                                         <form action="includes/listar.php" method="POST">
                                             <div class="modal-header">
@@ -48,7 +48,7 @@
                                             <div class="modal-body">
                                                 <div class="container">
                                                     <div class="row">
-                                                        <div class="col-12 col-lg-6 form-group"><img class="img-fluid" src="img/item.jpg" alt="item"></div>
+                                                        <div class="col-12 col-lg-6 form-group"><img class="img-fluid" src="img/menu_img/<?php echo $row['id_item'] ?>.jpg" alt="item"></div>
                                                         <div class="col col-lg-6">
                                                             <div class="row row_espacio">
 

@@ -39,6 +39,7 @@ if (isset($_SESSION['car'])) {
 
 
                         ?></title>
+                        <link rel="shortcut icon" type="image/png" href="/img/logo.png">
 </head>
 
 <body style="background-color: #D3D3D3;">

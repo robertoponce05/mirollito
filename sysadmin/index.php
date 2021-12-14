@@ -1,4 +1,4 @@
-<?php include('includes/db.php');?>
+<?php include('includes/db.php'); ?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -8,9 +8,10 @@
     <link rel="stylesheet" href="css/style.css">
 
     <title>Admin Mi Rollito: Login</title>
-
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
     </script>
+    <link rel="icon" type="image/x-icon" href="/img/sysadmin.ico">
 </head>
 
 <body>
@@ -20,7 +21,8 @@
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
 
-    <?php unset($_SESSION['message']); unset($_SESSION['message_type']);
+    <?php unset($_SESSION['message']);
+        unset($_SESSION['message_type']);
     } ?>
 
     <div class="navegar">
@@ -29,11 +31,11 @@
             <li class="nav-item nav_color_text">Mi Rollito - Admin</li>
         </ul>
     </div>
-    
+
     <div class="container-fluid">
-        
+
         <div class="row fullHeight bg_contenido">
-            
+
             <div class="position-relative">
                 <div class="position-absolute top-0 start-50 translate-middle-x">
                     <h3 class="salto">Bienvenido al sysadmin de Rollito</h3>
@@ -50,7 +52,7 @@
                                     <label for="floatingPassword">Contraseña</label>
                                 </div>
                                 <div class="col salto">
-                                    <input type="submit" class="btn enviar_sesion btn-success" name="loginsys" value="Iniciar sesión">                                    
+                                    <input type="submit" class="btn enviar_sesion btn-success" name="loginsys" value="Iniciar sesión">
                                 </div>
                             </form>
 

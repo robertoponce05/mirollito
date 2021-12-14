@@ -1,12 +1,12 @@
 <?php
 $iduser=$_SESSION['idusuario'];
 if ($_SESSION['envio'] == 1) {
-    $query = "SELECT * FROM direcciones WHERE idusuario='$iduser' and habilitar='1'";
+    $query = "SELECT * FROM direcciones WHERE idusuario=$iduser and habilitar=1";
     $result = mysqli_query($conn, $query);
     $filas = mysqli_num_rows($result);
     if ($filas > 0) {
         if ($_SESSION['envio'] == 1) {
-            $query = "SELECT * FROM direcciones";
+            $query = "SELECT * FROM direcciones WHERE idusuario=$iduser and habilitar=1";
             $result_dir = mysqli_query($conn, $query);
 ?>
             <div class="col-12 row_espacio">

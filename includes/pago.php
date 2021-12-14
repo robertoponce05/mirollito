@@ -56,7 +56,7 @@
                                 </div>
                                 <div class="card-text">
                                     <div class="col">
-                                        <p>Vencimiento: <?php echo $row['vencimiento'] ?></p>
+                                        <p>Vencimiento: <?php echo substr($row['vencimiento'],5,2).'/'.substr($row['vencimiento'],2,2)?></p>
 
                                         <p><?php echo $row['nombre'] ?></p>
                                     </div>
@@ -181,7 +181,7 @@
                                 </div>
                                 <div class="card-text">
                                     <div class="col">
-                                        <p>Vencimiento: <?php echo $row2['vencimiento'] ?></p>
+                                        <p>Vencimiento: <?php echo substr($row2['vencimiento'],5,2).'/'.substr($row2['vencimiento'],2,2) ?></p>
 
                                         <p><?php echo $row2['nombre'] ?></p>
                                     </div>
