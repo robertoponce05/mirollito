@@ -16,7 +16,7 @@ if (isset($_POST['loginsys'])) {
         $_SESSION['message_type'] = 'success';
         echo 'sesión iniciada';
         $_SESSION['user'] = $user;
-        header("location:../pedidos.php");
+        header("location:../sysadmin.php");
     } else {
         $_SESSION['message'] = 'Datos incorrectos';
         $_SESSION['message_type'] = 'danger';

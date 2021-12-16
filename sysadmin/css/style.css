@@ -106,3 +106,9 @@ a:hover {
 .alerta {
   margin: 0 !important;
 }
+.home_card{
+  height: 300px!important;
+}
+.card_margin{
+  margin:15px;
+}

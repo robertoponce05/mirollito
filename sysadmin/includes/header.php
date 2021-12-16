@@ -53,7 +53,7 @@
         <div class="row nomargin ">
             <div class="nav flex-column col-4 col-md-2 fullHeight">
                 
-                <a class="nav-link position-relative nav_color_text" aria-current="page" href="/sysadmin/sysadmin.php">Home
+                <a class="nav-link position-relative nav_color_text" aria-current="page" href="/sysadmin/sysadmin.php">Inicio
                 <?php 
                     if($in==0){
                         echo '<img class="position-absolute top-0 start-100" src="img/selector.png" alt=""></a><!--esta entrando-->';

@@ -37,6 +37,7 @@ include("includes/header.php");  ?>
                             <th scope="col">Domicilio</th>
                             <th scope="col">Cliente</th>
                             <th scope="col">Total</th>
+                            <th scope="col">Estatus</th>
                             <th scope="col">Finalizado</th>
                         </tr>
                     </thead>
@@ -51,8 +52,11 @@ include("includes/header.php");  ?>
                                     echo '<td class="text-center">' . $p['id_pedido'] . '</td>';
                                     $idp = $p['id_pedido'];
                                     $idCliente = $p['id_cliente'];
+                                    if ($p['estatus'] == 6) {
+                                        $estatus = $p['estatus'];
+                                    }
                                     $total = $p['total'];
-                                    $fecha_fin= $p['fecha_finalizado'];
+                                    $fecha_fin = $p['fecha_finalizado'];
 
                                     $query2 = "SELECT productos_vendidos.id_producto, productos.id_item, productos_vendidos.cantidad, productos.titulo, pedidos.id_pedido,pedidos.notas,pedidos.id_dir FROM productos_vendidos INNER JOIN productos ON productos_vendidos.id_producto=productos.id_item INNER JOIN pedidos ON pedidos.id_pedido = productos_vendidos.id_pedido AND pedidos.estatus >5 AND pedidos.id_pedido = $idp";
                                     $res = mysqli_query($conn, $query2);
@@ -98,13 +102,30 @@ include("includes/header.php");  ?>
                                         $nameCliente = mysqli_fetch_array($respuestaCliente);
                                         echo $nameCliente['nombre'] . ' ' . $nameCliente['p_apellido'];
                                         ?></td>
-                                    <td>$<?php echo $total;
-                                            $suma_ventas = $suma_ventas + $total;
-                                            ?></td>
+                                    <td><?php
+                                        if ($estatus == 6) {
+                                            echo '$' . $total;
+                                        } else {
+                                            echo '<p style="color: red;">$' . $total . '</p>';
+                                        }
+
+
+
+                                        ?></td>
                                     <td>
-                                        
-                                        <?php echo $fecha_fin;?>
-                                        <!-- <button type="submit" class="btn-sm btn-success" name="pedido" value="<?php //echo $idp; ?>"></button> -->
+                                        <?php
+                                        if ($estatus == 6) {
+                                            echo 'Completado';
+                                        } else {
+                                            echo '<p style="color: red;">Cancelado</p>';
+                                        }
+                                        ?>
+                                    </td>
+                                    <td>
+
+                                        <?php echo $fecha_fin; ?>
+                                        <!-- <button type="submit" class="btn-sm btn-success" name="pedido" value="<?php //echo $idp; 
+                                                                                                                    ?>"></button> -->
 
                                     </td>
                         </tr>
@@ -113,13 +134,19 @@ include("includes/header.php");  ?>
 
 
                     <?php } ?>
-                    
+
                     </form>
                     </tbody>
                 </table>
                 <tr>
-                        <h5>Total vendido: $<?php echo $suma_ventas ?></h5>
-                    </tr>
+                    <h5>Total vendido: $<?php $querytotal = "SELECT total FROM pedidos WHERE estatus=6";
+                                        $restotal = mysqli_query($conn, $querytotal);
+                                        $ttotal=0;
+                                        while($ntotal = mysqli_fetch_array($restotal)){
+                                            $ttotal+=$ntotal['total'];
+                                        }
+                                        echo $ttotal; ?></h5>
+                </tr>
             </div>
 
         </div>
