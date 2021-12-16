@@ -36,12 +36,39 @@
                             </div> -->
 
                             <select name="rol" id='rol' class="form-select" aria-label="Default select example" required>
-                                <option >Selecciona una opción</option>
-                                <option value="1" <?php if ($row['nivel'] == 1){echo 'selected';}?>>Súper</option>
-                                <option value="2" <?php if ($row['nivel'] == 2){echo 'selected';}?>>Sección pedidos</option>
-                                <option value="3" <?php if ($row['nivel'] == 3){echo 'selected';}?>>Lectura</option>
+                                <option>Selecciona una opción</option>
+                                <option value="1" <?php if ($row['nivel'] == 1) {
+                                                        echo 'selected';
+                                                    } ?>>Súper</option>
+                                <option value="2" <?php if ($row['nivel'] == 2) {
+                                                        echo 'selected';
+                                                    } ?>>Sección pedidos</option>
+                                <option value="3" <?php if ($row['nivel'] == 3) {
+                                                        echo 'selected';
+                                                    } ?>>Lectura</option>
                             </select>
 
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <label for="rol" class="form-label">Estatus</label>
+                                <!-- <input type="text" id="rol" class="form-control" name="rol" value="" required>
+                            <div id="rol" class="form-text">
+                                1: Usuario super. 2: Permisos para pedidos. 3: Permiso de lectura.
+                            </div> -->
+
+                                <select name="activo" id='activo' class="form-select" aria-label="Default select example" required>
+                                    
+                                    <option value="1" <?php if ($row['activo'] == 1) {
+                                                            echo 'selected';
+                                                        } ?>>Activar</option>
+                                    <option value="0" <?php if ($row['activo'] == 0) {
+                                                            echo 'selected';
+                                                        } ?>>Inhabilitar</option>
+
+                                </select>
+
+                            </div>
                         </div>
                         <div class="col-6">
                             <label for="pass" class="form-label">Contraseña</label>
@@ -60,6 +87,7 @@
                             </div>
 
                         </div>
+
                     </div>
                 </div>
                 <div class="modal-footer">

@@ -1,5 +1,10 @@
 <?php
 include('includes/db.php');
+if($_SESSION['nivel']==3){
+    $_SESSION['message'] = 'Sección no disponible, asegura que tienes los permisos';
+    $_SESSION['message_type'] = 'warning';
+    header("location:sysadmin.php");
+}else{
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
     
@@ -19,3 +24,4 @@ if (isset($_GET['id'])) {
     
 }
  header('Location:clientes.php');
+}

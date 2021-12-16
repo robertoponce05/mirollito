@@ -1,5 +1,10 @@
 <?php include("includes/db.php");
 $in = 4;
+if ($_SESSION['nivel']==2) {
+    $_SESSION['message'] = 'No tienes los permisos para realizar esta acción';
+    $_SESSION['message_type'] = 'warning';
+    header("location:sysadmin.php");
+}else{
 include("includes/header.php");  ?>
 
 <div class="col-8 col-md-10 fullHeight bg_contenido">
@@ -134,4 +139,4 @@ include("includes/header.php");  ?>
 </div>
 
 
-<?php include('includes/footer.php') ?>
+<?php include('includes/footer.php'); } ?>

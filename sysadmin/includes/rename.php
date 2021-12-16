@@ -1,5 +1,10 @@
 <?php
 include('db.php');
+if($_SESSION['nivel']==3){
+    $_SESSION['message'] = 'No tienes los permisos para realizar esta acción';
+    $_SESSION['message_type'] = 'warning';
+    header("location:../clientes.php");
+}else{
 $name = $_POST['nombre'];
 $p_ape = $_POST['p_ape'];
 $s_ape = $_POST['s_ape'];
@@ -20,3 +25,4 @@ if ($rest) {
     $_SESSION['message_type'] = 'warning';
 }
 header('Location:../clientes.php');
+}

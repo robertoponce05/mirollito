@@ -1,5 +1,10 @@
 <?php error_reporting(0);
 include("includes/db.php");
+if ($_SESSION['nivel']==2) {
+    $_SESSION['message'] = 'Sección no disponible, asegura que tienes los permisos';
+    $_SESSION['message_type'] = 'warning';
+    header("location:sysadmin.php");
+}else{
 $in = 3;
 $page = 0;
 include("includes/header.php");  ?>
@@ -31,14 +36,14 @@ include("includes/header.php");  ?>
                     <?php
                     $query = "SELECT * FROM clientes";
                     $result_clientes = mysqli_query($conn, $query);
-                    while ($row = mysqli_fetch_array($result_clientes)) { 
-                        if($row['activo']==0){
-                            $activo='class="id_desactivado"';
-                        }else{
-                            $activo="";
+                    while ($row = mysqli_fetch_array($result_clientes)) {
+                        if ($row['activo'] == 0) {
+                            $activo = 'class="id_desactivado"';
+                        } else {
+                            $activo = "";
                         }
-                        
-                        ?>
+
+                    ?>
                         <tr <?php echo $activo ?>>
                             <th><?php echo $row['idusuario'] ?></t>
                             <td><?php echo $row['nombre'] ?></td>
@@ -466,4 +471,4 @@ while ($row = mysqli_fetch_array($result_clientes)) {
 </body>
 
 
-</html>
+</html><?php }?>

@@ -1,6 +1,11 @@
 <?php
 include("includes/db.php");
 $in = 1;
+if($_SESSION['nivel']==2){
+    $_SESSION['message'] = 'Sección no disponible, asegura que tienes los permisos';
+    $_SESSION['message_type'] = 'warning';
+    header("location:sysadmin.php");
+}else{
 include("includes/header.php");  ?>
 
 <div class="col-8 col-md-10 lateral bg_contenido position-relative overflow-auto">
@@ -252,4 +257,4 @@ include("includes/header.php");  ?>
     </div>
 </div>
 
-<?php include("includes/footer.php") ?>
+<?php include("includes/footer.php"); }?>

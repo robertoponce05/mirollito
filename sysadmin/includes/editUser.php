@@ -1,10 +1,16 @@
 <?php
 include('db.php');
+if($_SESSION['nivel']==3){
+    $_SESSION['message'] = 'No tienes los permisos para realizar esta acción';
+    $_SESSION['message_type'] = 'warning';
+    header("location:../empleados.php");
+}else{
 $name = $_POST['nombre'];
 $ape = $_POST['apellido'];
 $user = $_POST['usuario'];
 $rol = $_POST['rol'];
 $id = $_POST['id'];
+$act = $_POST['activo'];
 
 if (isset($_POST['pass']) && isset($_POST['repass']) && $_POST['repass'] != "" && $_POST['pass'] != "") {
     $pass = $_POST['pass'];
@@ -18,7 +24,7 @@ if (isset($_POST['pass']) && isset($_POST['repass']) && $_POST['repass'] != "" &
             $_SESSION['message'] = 'El usuario ya existe, elige otro nombre de usuario';
             $_SESSION['message_type'] = 'warning';
         } else {
-            $query = "UPDATE sysadmin SET nombre='$name',apellido='$ape',usuario='$user',pass='$pass',nivel='$rol' WHERE id_admin=$id";
+            $query = "UPDATE sysadmin SET nombre='$name',apellido='$ape',usuario='$user',pass='$pass',nivel='$rol',activo='$act' WHERE id_admin=$id";
             echo $query;
             $result = mysqli_query($conn, $query);
             if ($result) {
@@ -45,7 +51,7 @@ if (isset($_POST['pass']) && isset($_POST['repass']) && $_POST['repass'] != "" &
         $_SESSION['message'] = 'El usuario ya existe, elige otro nombre de usuario';
         $_SESSION['message_type'] = 'warning';
     } else {
-        $query = "UPDATE sysadmin SET nombre='$name',apellido='$ape',usuario='$user',nivel='$rol' WHERE id_admin=$id";
+        $query = "UPDATE sysadmin SET nombre='$name',apellido='$ape',usuario='$user',nivel='$rol',activo='$act' WHERE id_admin=$id";
         $result = mysqli_query($conn, $query);
             if ($result) {
                 echo 'Actualizado';
@@ -59,3 +65,4 @@ if (isset($_POST['pass']) && isset($_POST['repass']) && $_POST['repass'] != "" &
     }
 }
 header('Location:../empleados.php');
+}

@@ -1,6 +1,10 @@
 <?php
 include("db.php");
-
+if($_SESSION['nivel']==3){
+    $_SESSION['message'] = 'No tienes los permisos para realizar esta acción';
+    $_SESSION['message_type'] = 'warning';
+    header("location:../clientes.php");
+}else{
 if (isset($_POST['alias'], $_POST['cp'], $_POST['colonia'], $_POST['municipio'], $_POST['exterior'])) {
     echo "Recibo datos ";
     $alias = $_POST['alias'];
@@ -29,4 +33,4 @@ referencia, idusuario,calle) VALUES ('$alias','$cp','$colonia',
 } else {
     echo 'no hay datos, no se hizo nada';
 }
-header('Location:../clientes.php');
+header('Location:../clientes.php');}

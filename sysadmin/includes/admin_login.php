@@ -16,6 +16,11 @@ if (isset($_POST['loginsys'])) {
         $_SESSION['message_type'] = 'success';
         echo 'sesión iniciada';
         $_SESSION['user'] = $user;
+        $query2="SELECT nivel FROM sysadmin WHERE usuario='$user' and pass='$pass'";
+        $result2 = mysqli_query($conn, $query2);
+        $row=mysqli_fetch_array($result2);
+        $_SESSION['nivel']=$row['nivel'];
+        echo $_SESSION['nivel'];
         header("location:../sysadmin.php");
     } else {
         $_SESSION['message'] = 'Datos incorrectos';
